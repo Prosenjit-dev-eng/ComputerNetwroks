@@ -1,0 +1,8 @@
+Computer Networks - Assignment 2: Flow Control Mechanisms Simulation.
+This text file serves as the input payload data for transmission over the simulated network channel.
+Data Link Layer protocols:
+1. Stop-and-Wait ARQ: Flow control with 1-frame window.
+2. Go-Back-N ARQ: Sliding window flow control with cumulative acknowledgements and N-frame retransmissions on timeout.
+3. Selective Repeat ARQ: Sliding window flow control with selective acknowledgements, out-of-order buffering, and individual frame retransmissions.
+Frame check sequences are generated using CRC (CRC-8, CRC-10, CRC-16, CRC-32) and 16-bit Checksum.
+Dynamic timeout is computed using Jacobson and Karn's round-trip time estimation algorithm.
