@@ -334,7 +334,7 @@ int main()
                 AckFrame ack;
                 if (AckFrame::deserialize(ackMsg, ack, fcsMethod, crcChoice))
                 {
-                    cout << "  [SENDER] Received Cumulative ACK " << ack.ackSeq << "\n";
+                    cout << "  [SENDER] Received Cumulative ACK " << ack.ackSeq << "\n";//cumulative ack
                     if (ack.ackSeq >= base)
                     {
                         auto ackTime = high_resolution_clock::now();
