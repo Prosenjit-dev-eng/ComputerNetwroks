@@ -1,0 +1,373 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1450 1600" width="100%" height="100%" style="background-color: #ffffff; font-family: 'Arial', 'Helvetica', sans-serif;">
+  
+  <defs>
+    <!-- Sharp Black Markers for Xerox Print -->
+    <marker id="arrow-black" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+    
+    <!-- Diagonal Hatch Pattern for Discard/Loss States -->
+    <pattern id="hatch-drop" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#000000" stroke-width="1.5" />
+    </pattern>
+  </defs>
+
+  <!-- Outer Canvas Border -->
+  <rect x="20" y="20" width="1410" height="1560" fill="#ffffff" stroke="#000000" stroke-width="2" />
+
+  <!-- Title & Header Banner -->
+  <rect x="40" y="35" width="1370" height="80" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="725" y="70" text-anchor="middle" fill="#000000" font-size="22" font-weight="bold" letter-spacing="1">FLOW CONTROL MECHANISMS &amp; ARQ ARCHITECTURE</text>
+  <text x="725" y="96" text-anchor="middle" fill="#000000" font-size="13">Stop-and-Wait | Go-Back-N (N=4) | Selective Repeat (N=4) [Print / Xerox Edition]</text>
+
+  <!-- ==================== SUBGRAPH 1: SENDER PROGRAM ==================== -->
+  <rect x="40" y="135" width="410" height="1425" fill="#ffffff" stroke="#000000" stroke-width="2" stroke-dasharray="8,4" />
+  <rect x="40" y="135" width="410" height="40" fill="#000000" stroke="#000000" stroke-width="2" />
+  <text x="245" y="161" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="bold">SENDER PROGRAM (LLC LAYER)</text>
+
+  <!-- S_Start -->
+  <rect x="125" y="195" width="240" height="42" rx="21" fill="#ffffff" stroke="#000000" stroke-width="2.5" />
+  <text x="245" y="221" text-anchor="middle" fill="#000000" font-size="13" font-weight="bold">Start Transmission</text>
+
+  <!-- S_Read -->
+  <rect x="105" y="262" width="280" height="48" fill="#ffffff" stroke="#000000" stroke-width="1.8" />
+  <text x="245" y="282" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Read Payload from File</text>
+  <text x="245" y="299" text-anchor="middle" fill="#000000" font-size="11">Chunk Size: 46 - 1500 Bytes</text>
+
+  <!-- S_Framing -->
+  <rect x="95" y="335" width="300" height="58" fill="#ffffff" stroke="#000000" stroke-width="1.8" />
+  <text x="245" y="358" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Framing(): Construct Frame</text>
+  <text x="245" y="376" text-anchor="middle" fill="#000000" font-size="11">12B Header + Payload + 4B FCS (CRC-32)</text>
+
+  <!-- S_WindowCheck (Decision) -->
+  <polygon points="245,415 375,455 245,495 115,455" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="245" y="451" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Window Full?</text>
+  <text x="245" y="467" text-anchor="middle" fill="#000000" font-size="10">(N for GBN/SR, 1 for S&amp;W)</text>
+
+  <!-- S_Send -->
+  <rect x="105" y="525" width="280" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.8" />
+  <text x="245" y="546" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Send(): Transmit Frame</text>
+  <text x="245" y="563" text-anchor="middle" fill="#000000" font-size="11">Push Data via Socket Link</text>
+
+  <!-- S_Timer -->
+  <rect x="105" y="600" width="280" height="48" fill="#ffffff" stroke="#000000" stroke-width="1.8" />
+  <text x="245" y="621" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Timer(): Start Frame Timer</text>
+  <text x="245" y="637" text-anchor="middle" fill="#000000" font-size="11">Record Transmission Timestamp</text>
+
+  <!-- S_WaitACK -->
+  <rect x="105" y="675" width="280" height="48" fill="#ffffff" stroke="#000000" stroke-width="1.8" />
+  <text x="245" y="696" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Wait for ACK / Listen Timer</text>
+  <text x="245" y="712" text-anchor="middle" fill="#000000" font-size="11">Non-blocking / Select Poll</text>
+
+  <!-- S_Event (Decision) -->
+  <polygon points="245,750 375,790 245,830 115,790" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="245" y="786" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Timer Event?</text>
+  <text x="245" y="802" text-anchor="middle" fill="#000000" font-size="10">ACK Arrival vs Timeout</text>
+
+  <!-- S_HandleTimeout -->
+  <rect x="85" y="865" width="320" height="52" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="245" y="887" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Timeout(): Recompute RTT</text>
+  <text x="245" y="904" text-anchor="middle" fill="#000000" font-size="11">Update Dynamic Timeout Interval</text>
+
+  <!-- S_ProtocolChoice (Decision) -->
+  <polygon points="245,945 385,990 245,1035 105,990" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="245" y="986" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">ARQ Scheme?</text>
+  <text x="245" y="1002" text-anchor="middle" fill="#000000" font-size="10">Select Retransmission</text>
+
+  <!-- Retransmission Branches -->
+  <rect x="55" y="1065" width="115" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.8" />
+  <text x="112" y="1086" text-anchor="middle" fill="#000000" font-size="11" font-weight="bold">Stop &amp; Wait</text>
+  <text x="112" y="1103" text-anchor="middle" fill="#000000" font-size="9">Resend Current</text>
+
+  <rect x="185" y="1065" width="120" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.8" />
+  <text x="245" y="1086" text-anchor="middle" fill="#000000" font-size="11" font-weight="bold">Go-Back-N</text>
+  <text x="245" y="1103" text-anchor="middle" fill="#000000" font-size="9">Resend Window</text>
+
+  <rect x="320" y="1065" width="115" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.8" />
+  <text x="377" y="1086" text-anchor="middle" fill="#000000" font-size="11" font-weight="bold">Selective Repeat</text>
+  <text x="377" y="1103" text-anchor="middle" fill="#000000" font-size="9">Resend Lost Only</text>
+
+  <!-- S_RecvACK -->
+  <rect x="105" y="1155" width="280" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.8" />
+  <text x="245" y="1176" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Recv(): Parse Incoming ACK</text>
+  <text x="245" y="1193" text-anchor="middle" fill="#000000" font-size="11">Compute Sample RTT</text>
+
+  <!-- S_SlideWindow -->
+  <rect x="105" y="1235" width="280" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.8" />
+  <text x="245" y="1256" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Slide Window &amp; Stop Timers</text>
+  <text x="245" y="1273" text-anchor="middle" fill="#000000" font-size="11">Increment Base Seq Number</text>
+
+  <!-- S_MoreData (Decision) -->
+  <polygon points="245,1315 365,1350 245,1385 125,1350" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="245" y="1354" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">More Data?</text>
+
+  <!-- S_End -->
+  <rect x="145" y="1420" width="200" height="40" rx="20" fill="#ffffff" stroke="#000000" stroke-width="2.5" />
+  <text x="245" y="1445" text-anchor="middle" fill="#000000" font-size="13" font-weight="bold">End Transmission</text>
+
+
+  <!-- ==================== SUBGRAPH 2: SIMULATED CHANNEL ==================== -->
+  <rect x="520" y="135" width="410" height="1425" fill="#ffffff" stroke="#000000" stroke-width="2" stroke-dasharray="8,4" />
+  <rect x="520" y="135" width="410" height="40" fill="#000000" stroke="#000000" stroke-width="2" />
+  <text x="725" y="161" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="bold">SIMULATED CHANNEL MODULE</text>
+
+  <!-- Forward Path Section -->
+  <rect x="535" y="195" width="380" height="570" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="725" y="217" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">[ FORWARD PATH: DATA FRAMES ]</text>
+
+  <rect x="595" y="235" width="260" height="45" fill="#ffffff" stroke="#000000" stroke-width="1.8" />
+  <text x="725" y="262" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Receive Frame from Sender</text>
+
+  <!-- Ch_Loss -->
+  <polygon points="725,305 845,345 725,385 605,345" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="725" y="341" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Packet Drop?</text>
+  <text x="725" y="357" text-anchor="middle" fill="#000000" font-size="10">P_loss (0.1 - 0.5)</text>
+
+  <!-- Ch_Dropped -->
+  <rect x="560" y="405" width="140" height="52" fill="url(#hatch-drop)" stroke="#000000" stroke-width="2" />
+  <rect x="570" y="415" width="120" height="32" fill="#ffffff" stroke="#000000" stroke-width="1" />
+  <text x="630" y="435" text-anchor="middle" fill="#000000" font-size="11" font-weight="bold">DROP FRAME</text>
+
+  <!-- Ch_Delay -->
+  <rect x="740" y="405" width="160" height="52" fill="#ffffff" stroke="#000000" stroke-width="1.8" />
+  <text x="820" y="427" text-anchor="middle" fill="#000000" font-size="11" font-weight="bold">Apply Random Delay</text>
+  <text x="820" y="444" text-anchor="middle" fill="#000000" font-size="10">Simulate Jitter</text>
+
+  <!-- Ch_Error -->
+  <polygon points="725,485 845,525 725,565 605,525" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="725" y="521" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Inject Bit Error?</text>
+  <text x="725" y="537" text-anchor="middle" fill="#000000" font-size="10">P_err (0.1 - 0.5)</text>
+
+  <!-- Ch_Corrupt -->
+  <rect x="560" y="585" width="140" height="52" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="630" y="607" text-anchor="middle" fill="#000000" font-size="11" font-weight="bold">Flip Bits (XOR)</text>
+  <text x="630" y="624" text-anchor="middle" fill="#000000" font-size="9">Corrupt Payload</text>
+
+  <!-- Ch_Forward -->
+  <rect x="615" y="665" width="220" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.8" />
+  <text x="725" y="687" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Forward Frame</text>
+  <text x="725" y="704" text-anchor="middle" fill="#000000" font-size="10">Pass to Receiver Socket</text>
+
+  <!-- Return Path Section -->
+  <rect x="535" y="795" width="380" height="400" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="725" y="818" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">[ RETURN PATH: ACK FRAMES ]</text>
+
+  <rect x="595" y="845" width="260" height="45" fill="#ffffff" stroke="#000000" stroke-width="1.8" />
+  <text x="725" y="872" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Receive ACK from Receiver</text>
+
+  <!-- Ch_ACK_Loss -->
+  <polygon points="725,915 845,955 725,995 605,955" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="725" y="951" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">ACK Dropped / Lost?</text>
+  <text x="725" y="967" text-anchor="middle" fill="#000000" font-size="10">P_ack_loss (0.1 - 0.2)</text>
+
+  <!-- Ch_ACK_Drop -->
+  <rect x="560" y="1025" width="140" height="50" fill="url(#hatch-drop)" stroke="#000000" stroke-width="2" />
+  <rect x="570" y="1034" width="120" height="32" fill="#ffffff" stroke="#000000" stroke-width="1" />
+  <text x="630" y="1054" text-anchor="middle" fill="#000000" font-size="11" font-weight="bold">DISCARD ACK</text>
+
+  <!-- Ch_ACK_Deliver -->
+  <rect x="730" y="1025" width="160" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.8" />
+  <text x="810" y="1047" text-anchor="middle" fill="#000000" font-size="11" font-weight="bold">Deliver ACK</text>
+  <text x="810" y="1064" text-anchor="middle" fill="#000000" font-size="10">Forward to Sender</text>
+
+
+  <!-- ==================== SUBGRAPH 3: RECEIVER PROGRAM ==================== -->
+  <rect x="1000" y="135" width="410" height="1425" fill="#ffffff" stroke="#000000" stroke-width="2" stroke-dasharray="8,4" />
+  <rect x="1000" y="135" width="410" height="40" fill="#000000" stroke="#000000" stroke-width="2" />
+  <text x="1205" y="161" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="bold">RECEIVER PROGRAM (LLC LAYER)</text>
+
+  <!-- R_Recv -->
+  <rect x="1065" y="195" width="280" height="48" fill="#ffffff" stroke="#000000" stroke-width="1.8" />
+  <text x="1205" y="217" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Recv(): Frame from Socket</text>
+  <text x="1205" y="233" text-anchor="middle" fill="#000000" font-size="11">Parse Header + Payload + FCS</text>
+
+  <!-- R_Check (Decision) -->
+  <polygon points="1205,270 1335,310 1205,350 1075,310" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="1205" y="306" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Check(): CRC-32 OK?</text>
+  <text x="1205" y="322" text-anchor="middle" fill="#000000" font-size="10">Compare Trailer FCS</text>
+
+  <!-- R_Discard -->
+  <rect x="1285" y="375" width="115" height="52" fill="url(#hatch-drop)" stroke="#000000" stroke-width="2" />
+  <rect x="1292" y="383" width="100" height="35" fill="#ffffff" stroke="#000000" stroke-width="1" />
+  <text x="1342" y="405" text-anchor="middle" fill="#000000" font-size="11" font-weight="bold">DISCARD</text>
+
+  <!-- R_Scheme (Decision) -->
+  <polygon points="1205,435 1345,475 1205,515 1065,475" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="1205" y="471" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">Protocol Choice?</text>
+  <text x="1205" y="487" text-anchor="middle" fill="#000000" font-size="10">Direct to Protocol Handler</text>
+
+  <!-- Stop & Wait Branch -->
+  <rect x="1015" y="550" width="380" height="150" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="1025" y="570" fill="#000000" font-size="11" font-weight="bold">[ Stop &amp; Wait ]</text>
+  <polygon points="1135,585 1205,610 1135,635 1065,610" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="1135" y="614" text-anchor="middle" fill="#000000" font-size="10" font-weight="bold">Expected Seq?</text>
+  <rect x="1235" y="585" width="145" height="42" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="1307" y="603" text-anchor="middle" fill="#000000" font-size="10" font-weight="bold">Accept &amp; Deliver</text>
+  <text x="1307" y="618" text-anchor="middle" fill="#000000" font-size="9">Invert Expected Bit</text>
+  <rect x="1135" y="650" width="160" height="35" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="1215" y="672" text-anchor="middle" fill="#000000" font-size="11" font-weight="bold">Send ACK(seq)</text>
+
+  <!-- Go-Back-N Branch -->
+  <rect x="1015" y="725" width="380" height="175" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="1025" y="745" fill="#000000" font-size="11" font-weight="bold">[ Go-Back-N (Rx Window = 1) ]</text>
+  <polygon points="1135,765 1215,795 1135,825 1055,795" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="1135" y="799" text-anchor="middle" fill="#000000" font-size="10" font-weight="bold">In-Order Frame?</text>
+  <rect x="1245" y="770" width="135" height="42" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="1312" y="788" text-anchor="middle" fill="#000000" font-size="10" font-weight="bold">Accept Frame</text>
+  <text x="1312" y="803" text-anchor="middle" fill="#000000" font-size="9">expectedSeq++</text>
+  <rect x="1115" y="845" width="190" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="1210" y="865" text-anchor="middle" fill="#000000" font-size="11" font-weight="bold">Send Cumulative ACK</text>
+  <text x="1210" y="879" text-anchor="middle" fill="#000000" font-size="9">ACKs up to frame i-1</text>
+  <rect x="1025" y="840" width="75" height="45" fill="url(#hatch-drop)" stroke="#000000" stroke-width="1.5" />
+  <rect x="1030" y="846" width="65" height="32" fill="#ffffff" stroke="#000000" stroke-width="1" />
+  <text x="1062" y="866" text-anchor="middle" fill="#000000" font-size="9" font-weight="bold">Discard</text>
+
+  <!-- Selective Repeat Branch -->
+  <rect x="1015" y="925" width="380" height="235" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="1025" y="945" fill="#000000" font-size="11" font-weight="bold">[ Selective Repeat (Rx Window = N) ]</text>
+  <rect x="1065" y="960" width="280" height="38" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="1205" y="977" text-anchor="middle" fill="#000000" font-size="11" font-weight="bold">Buffer Frame in Rx Window</text>
+  <text x="1205" y="991" text-anchor="middle" fill="#000000" font-size="9">Store in buffer, mark received</text>
+  <rect x="1065" y="1012" width="280" height="38" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="1205" y="1030" text-anchor="middle" fill="#000000" font-size="11" font-weight="bold">Send Independent ACK(i)</text>
+  <text x="1205" y="1044" text-anchor="middle" fill="#000000" font-size="9">Acknowledge specific frame</text>
+  <polygon points="1205,1065 1320,1095 1205,1125 1090,1095" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="1205" y="1099" text-anchor="middle" fill="#000000" font-size="10" font-weight="bold">Contiguous In-Order?</text>
+  <rect x="1065" y="1135" width="280" height="35" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="1205" y="1157" text-anchor="middle" fill="#000000" font-size="11" font-weight="bold">Deliver Frames &amp; Slide Window</text>
+
+
+  <!-- ==================== FLOW CONNECTORS (SOLID BLACK) ==================== -->
+  <!-- Sender local flow -->
+  <line x1="245" y1="237" x2="245" y2="262" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <line x1="245" y1="310" x2="245" y2="335" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <line x1="245" y1="393" x2="245" y2="415" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <line x1="245" y1="495" x2="245" y2="525" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <text x="255" y="515" fill="#000000" font-size="11" font-weight="bold">No</text>
+  
+  <!-- Window Full Yes Loop -->
+  <path d="M 375 455 L 405 455 L 405 700 L 385 700" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <text x="380" y="445" fill="#000000" font-size="11" font-weight="bold">Yes</text>
+
+  <line x1="245" y1="575" x2="245" y2="600" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <line x1="245" y1="648" x2="245" y2="675" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <line x1="245" y1="723" x2="245" y2="750" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+
+  <!-- Timeout Branch -->
+  <line x1="245" y1="830" x2="245" y2="865" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <text x="255" y="850" fill="#000000" font-size="11" font-weight="bold">Timeout</text>
+  <line x1="245" y1="917" x2="245" y2="945" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+
+  <!-- Retransmission Branches -->
+  <path d="M 175 1010 L 112 1010 L 112 1065" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <line x1="245" y1="1035" x2="245" y2="1065" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <path d="M 315 1010 L 377 1010 L 377 1065" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+
+  <!-- Loop back from Retransmit to Send -->
+  <path d="M 55 1090 L 46 1090 L 46 550 L 105 550" fill="none" stroke="#000000" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arrow-black)" />
+
+  <!-- ACK Event Branch -->
+  <path d="M 115 790 L 68 790 L 68 1180 L 105 1180" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <text x="75" y="780" fill="#000000" font-size="11" font-weight="bold">Recv ACK</text>
+
+  <line x1="245" y1="1205" x2="245" y2="1235" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <line x1="245" y1="1285" x2="245" y2="1315" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <line x1="245" y1="1385" x2="245" y2="1420" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <text x="255" y="1405" fill="#000000" font-size="10" font-weight="bold">No</text>
+  
+  <!-- More data Yes loop -->
+  <path d="M 125 1350 L 52 1350 L 52 285 L 105 285" fill="none" stroke="#000000" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arrow-black)" />
+  <text x="60" y="1340" fill="#000000" font-size="10" font-weight="bold">Yes</text>
+
+  <!-- Cross-Process Forward Connection (Sender Send -> Channel) -->
+  <path d="M 385 550 L 500 550 L 500 257 L 595 257" fill="none" stroke="#000000" stroke-width="2.2" marker-end="url(#arrow-black)" />
+  <text x="415" y="245" fill="#000000" font-size="11" font-weight="bold">Data Frame [TX]</text>
+
+  <!-- Channel Forward Inner Flow -->
+  <line x1="725" y1="280" x2="725" y2="305" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  
+  <line x1="665" y1="345" x2="630" y2="345" stroke="#000000" stroke-width="1.8" />
+  <line x1="630" y1="345" x2="630" y2="405" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <text x="635" y="390" fill="#000000" font-size="10" font-weight="bold">Yes</text>
+
+  <line x1="785" y1="345" x2="820" y2="345" stroke="#000000" stroke-width="1.8" />
+  <line x1="820" y1="345" x2="820" y2="405" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <text x="825" y="390" fill="#000000" font-size="10" font-weight="bold">No</text>
+
+  <line x1="820" y1="457" x2="820" y2="470" stroke="#000000" stroke-width="1.8" />
+  <line x1="820" y1="470" x2="725" y2="470" stroke="#000000" stroke-width="1.8" />
+  <line x1="725" y1="470" x2="725" y2="485" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+
+  <line x1="665" y1="525" x2="630" y2="525" stroke="#000000" stroke-width="1.8" />
+  <line x1="630" y1="525" x2="630" y2="585" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <text x="635" y="570" fill="#000000" font-size="10" font-weight="bold">Yes</text>
+
+  <line x1="785" y1="525" x2="785" y2="665" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <text x="790" y="570" fill="#000000" font-size="10" font-weight="bold">No</text>
+
+  <line x1="630" y1="637" x2="630" y2="690" stroke="#000000" stroke-width="1.8" />
+  <line x1="630" y1="690" x2="615" y2="690" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+
+  <!-- Channel Forward to Receiver -->
+  <path d="M 835 690 L 950 690 L 950 219 L 1065 219" fill="none" stroke="#000000" stroke-width="2.2" marker-end="url(#arrow-black)" />
+  <text x="960" y="210" fill="#000000" font-size="11" font-weight="bold">Forwarded Frame</text>
+
+  <!-- Receiver Internal Flow -->
+  <line x1="1205" y1="243" x2="1205" y2="270" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  
+  <!-- CRC Error Discard -->
+  <line x1="1335" y1="310" x2="1342" y2="310" stroke="#000000" stroke-width="1.8" />
+  <line x1="1342" y1="310" x2="1342" y2="375" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <text x="1345" y="350" fill="#000000" font-size="10" font-weight="bold">Corrupt</text>
+
+  <line x1="1205" y1="350" x2="1205" y2="435" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <text x="1210" y="395" fill="#000000" font-size="10" font-weight="bold">Valid</text>
+
+  <!-- Protocol Selection Routing -->
+  <path d="M 1065 475 L 1045 475 L 1045 610 L 1065 610" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <path d="M 1065 475 L 1030 475 L 1030 795 L 1055 795" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <path d="M 1345 475 L 1365 475 L 1365 979 L 1345 979" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+
+  <!-- Stop & Wait Inner -->
+  <line x1="1205" y1="610" x2="1235" y2="610" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <line x1="1307" y1="627" x2="1307" y2="667" stroke="#000000" stroke-width="1.5" />
+  <line x1="1307" y1="667" x2="1295" y2="667" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow-black)" />
+  <path d="M 1135 635 L 1135 667 L 1135 667" fill="none" stroke="#000000" stroke-width="1.5" />
+
+  <!-- Go Back N Inner -->
+  <line x1="1215" y1="795" x2="1245" y2="795" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <text x="1220" y="785" fill="#000000" font-size="9" font-weight="bold">Yes</text>
+  <line x1="1055" y1="795" x2="1035" y2="795" stroke="#000000" stroke-width="1.8" />
+  <line x1="1035" y1="795" x2="1035" y2="840" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <text x="1040" y="820" fill="#000000" font-size="9" font-weight="bold">No</text>
+  <line x1="1312" y1="812" x2="1312" y2="865" stroke="#000000" stroke-width="1.5" />
+  <line x1="1312" y1="865" x2="1305" y2="865" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow-black)" />
+
+  <!-- Selective Repeat Inner -->
+  <line x1="1205" y1="998" x2="1205" y2="1012" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <line x1="1205" y1="1050" x2="1205" y2="1065" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <line x1="1205" y1="1125" x2="1205" y2="1135" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <text x="1210" y="1132" fill="#000000" font-size="9" font-weight="bold">Yes</text>
+
+  <!-- Cross-Process ACK Return Links -->
+  <path d="M 1135 667 L 970 667 L 970 867 L 855 867" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow-black)" />
+  <path d="M 1115 865 L 970 865 L 855 867" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow-black)" />
+  <path d="M 1065 1030 L 960 1030 L 960 867 L 855 867" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow-black)" />
+  <text x="965" y="855" fill="#000000" font-size="11" font-weight="bold">ACK Return</text>
+
+  <!-- Channel Return Inner Flow -->
+  <line x1="725" y1="890" x2="725" y2="915" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  
+  <line x1="665" y1="955" x2="630" y2="955" stroke="#000000" stroke-width="1.8" />
+  <line x1="630" y1="955" x2="630" y2="1025" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <text x="635" y="1005" fill="#000000" font-size="10" font-weight="bold">Yes</text>
+
+  <line x1="785" y1="955" x2="810" y2="955" stroke="#000000" stroke-width="1.8" />
+  <line x1="810" y1="955" x2="810" y2="1025" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow-black)" />
+  <text x="815" y="1005" fill="#000000" font-size="10" font-weight="bold">No</text>
+
+  <!-- Channel ACK Delivery to Sender -->
+  <path d="M 730 1050 L 480 1050 L 480 1180 L 385 1180" fill="none" stroke="#000000" stroke-width="2.2" marker-end="url(#arrow-black)" />
+  <text x="410" y="1170" fill="#000000" font-size="11" font-weight="bold">ACK Delivered</text>
+
+</svg>
