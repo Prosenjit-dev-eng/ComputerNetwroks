@@ -1,0 +1,568 @@
+experiment,scheme,N,p,trial,collisions,successful_transmissions,average_delay,throughput,efficiency
+Exp1_p_Persistent,p-persistent,5,0.1,1,20,80,71.21,24885.88,67.62
+Exp1_p_Persistent,p-persistent,5,0.1,2,14,80,64.73,26192.17,71.17
+Exp1_p_Persistent,p-persistent,5,0.1,3,3,80,56.47,30476.19,82.82
+Exp1_p_Persistent,p-persistent,5,0.1,4,9,80,58.56,27878.79,75.76
+Exp1_p_Persistent,p-persistent,5,0.1,5,18,80,70.46,25869.95,70.3
+Exp1_p_Persistent,p-persistent,5,0.1,6,8,80,61.32,28307.69,76.92
+Exp1_p_Persistent,p-persistent,5,0.1,7,15,80,66.65,25779.33,70.05
+Exp1_p_Persistent,p-persistent,5,0.1,8,19,80,71.44,24739.5,67.23
+Exp1_p_Persistent,p-persistent,5,0.1,9,21,80,72.14,24822.93,67.45
+Exp1_p_Persistent,p-persistent,5,0.1,10,15,80,65.81,26451.03,71.88
+Exp1_p_Persistent,p-persistent,5,0.1,11,22,80,70.64,24131.15,65.57
+Exp1_p_Persistent,p-persistent,5,0.1,12,15,80,74.3,26192.17,71.17
+Exp1_p_Persistent,p-persistent,5,0.1,13,27,80,75.5,23458.17,63.75
+Exp1_p_Persistent,p-persistent,5,0.1,14,19,80,64.17,25984.11,70.61
+Exp1_p_Persistent,p-persistent,5,0.1,15,12,80,61.37,27643.19,75.12
+Exp1_p_Persistent,p-persistent,5,0.2,1,40,80,75.37,23054.03,62.65
+Exp1_p_Persistent,p-persistent,5,0.2,2,26,80,57.84,26379.93,71.68
+Exp1_p_Persistent,p-persistent,5,0.2,3,33,80,75.04,24290.43,66.01
+Exp1_p_Persistent,p-persistent,5,0.2,4,34,80,70.83,23993.48,65.2
+Exp1_p_Persistent,p-persistent,5,0.2,5,46,80,75.31,22235.65,60.42
+Exp1_p_Persistent,p-persistent,5,0.2,6,40,80,78.69,22646.15,61.54
+Exp1_p_Persistent,p-persistent,5,0.2,7,31,80,69.68,24512.91,66.61
+Exp1_p_Persistent,p-persistent,5,0.2,8,32,80,75.17,24350.7,66.17
+Exp1_p_Persistent,p-persistent,5,0.2,9,35,80,69.82,23799.51,64.67
+Exp1_p_Persistent,p-persistent,5,0.2,10,38,80,71.76,23272.73,63.24
+Exp1_p_Persistent,p-persistent,5,0.2,11,37,80,77.51,23365.08,63.49
+Exp1_p_Persistent,p-persistent,5,0.2,12,20,80,61.93,27669.17,75.19
+Exp1_p_Persistent,p-persistent,5,0.2,13,27,80,69.17,25533.39,69.38
+Exp1_p_Persistent,p-persistent,5,0.2,14,31,80,70.0,24615.38,66.89
+Exp1_p_Persistent,p-persistent,5,0.2,15,39,80,74.38,23199.37,63.04
+Exp1_p_Persistent,p-persistent,5,0.3,1,34,80,56.18,24533.33,66.67
+Exp1_p_Persistent,p-persistent,5,0.3,2,40,80,82.54,23570.86,64.05
+Exp1_p_Persistent,p-persistent,5,0.3,3,44,80,69.2,22286.15,60.56
+Exp1_p_Persistent,p-persistent,5,0.3,4,53,80,84.08,21364.3,58.06
+Exp1_p_Persistent,p-persistent,5,0.3,5,49,80,79.94,21807.41,59.26
+Exp1_p_Persistent,p-persistent,5,0.3,6,39,80,76.39,23818.77,64.72
+Exp1_p_Persistent,p-persistent,5,0.3,7,48,80,68.99,22085.52,60.02
+Exp1_p_Persistent,p-persistent,5,0.3,8,45,80,69.19,22542.11,61.26
+Exp1_p_Persistent,p-persistent,5,0.3,9,53,80,81.04,21364.3,58.06
+Exp1_p_Persistent,p-persistent,5,0.3,10,48,80,68.02,22102.1,60.06
+Exp1_p_Persistent,p-persistent,5,0.3,11,34,80,55.42,24553.79,66.72
+Exp1_p_Persistent,p-persistent,5,0.3,12,58,80,81.09,20289.46,55.13
+Exp1_p_Persistent,p-persistent,5,0.3,13,42,80,50.62,22892.69,62.21
+Exp1_p_Persistent,p-persistent,5,0.3,14,42,80,101.85,23181.1,62.99
+Exp1_p_Persistent,p-persistent,5,0.3,15,64,80,88.45,19574.47,53.19
+Exp1_p_Persistent,p-persistent,5,0.4,1,77,80,93.83,17973.14,48.84
+Exp1_p_Persistent,p-persistent,5,0.4,2,64,80,84.12,19959.32,54.24
+Exp1_p_Persistent,p-persistent,5,0.4,3,34,80,88.64,24843.88,67.51
+Exp1_p_Persistent,p-persistent,5,0.4,4,76,80,102.29,18206.56,49.47
+Exp1_p_Persistent,p-persistent,5,0.4,5,62,80,94.75,19986.42,54.31
+Exp1_p_Persistent,p-persistent,5,0.4,6,57,80,88.64,20776.29,56.46
+Exp1_p_Persistent,p-persistent,5,0.4,7,48,80,65.11,22202.11,60.33
+Exp1_p_Persistent,p-persistent,5,0.4,8,69,80,87.87,19030.38,51.71
+Exp1_p_Persistent,p-persistent,5,0.4,9,53,80,72.0,21457.73,58.31
+Exp1_p_Persistent,p-persistent,5,0.4,10,57,80,76.44,21028.57,57.14
+Exp1_p_Persistent,p-persistent,5,0.4,11,58,80,194.48,20317.46,55.21
+Exp1_p_Persistent,p-persistent,5,0.4,12,61,80,94.2,20247.59,55.02
+Exp1_p_Persistent,p-persistent,5,0.4,13,77,80,170.88,17962.17,48.81
+Exp1_p_Persistent,p-persistent,5,0.4,14,64,80,85.75,19705.49,53.55
+Exp1_p_Persistent,p-persistent,5,0.4,15,62,80,76.08,20150.58,54.76
+Exp1_p_Persistent,p-persistent,5,0.5,1,56,80,53.76,20879.43,56.74
+Exp1_p_Persistent,p-persistent,5,0.5,2,68,80,77.65,19304.92,52.46
+Exp1_p_Persistent,p-persistent,5,0.5,3,70,80,74.71,19355.69,52.6
+Exp1_p_Persistent,p-persistent,5,0.5,4,67,80,80.07,19509.61,53.02
+Exp1_p_Persistent,p-persistent,5,0.5,5,64,80,70.01,19878.46,54.02
+Exp1_p_Persistent,p-persistent,5,0.5,6,64,80,66.32,19932.3,54.16
+Exp1_p_Persistent,p-persistent,5,0.5,7,64,80,90.15,19878.46,54.02
+Exp1_p_Persistent,p-persistent,5,0.5,8,83,80,108.96,17724.26,48.16
+Exp1_p_Persistent,p-persistent,5,0.5,9,63,80,64.07,20013.6,54.38
+Exp1_p_Persistent,p-persistent,5,0.5,10,64,80,60.07,19811.57,53.84
+Exp1_p_Persistent,p-persistent,5,0.5,11,60,80,100.45,20345.54,55.29
+Exp1_p_Persistent,p-persistent,5,0.5,12,68,80,118.81,19355.69,52.6
+Exp1_p_Persistent,p-persistent,5,0.5,13,74,80,111.57,18692.06,50.79
+Exp1_p_Persistent,p-persistent,5,0.5,14,55,80,68.13,21395.35,58.14
+Exp1_p_Persistent,p-persistent,5,0.5,15,65,80,122.02,19600.53,53.26
+Exp1_p_Persistent,p-persistent,5,0.6,1,54,80,48.26,21333.33,57.97
+Exp1_p_Persistent,p-persistent,5,0.6,2,40,80,50.76,23857.37,64.83
+Exp1_p_Persistent,p-persistent,5,0.6,3,74,80,100.45,18727.74,50.89
+Exp1_p_Persistent,p-persistent,5,0.6,4,61,80,81.54,20430.26,55.52
+Exp1_p_Persistent,p-persistent,5,0.6,5,71,80,102.67,19141.74,52.02
+Exp1_p_Persistent,p-persistent,5,0.6,6,51,80,44.7,21888.48,59.48
+Exp1_p_Persistent,p-persistent,5,0.6,7,88,80,76.71,16968.3,46.11
+Exp1_p_Persistent,p-persistent,5,0.6,8,72,80,74.15,18944.66,51.48
+Exp1_p_Persistent,p-persistent,5,0.6,9,70,80,84.08,19279.63,52.39
+Exp1_p_Persistent,p-persistent,5,0.6,10,60,80,43.38,20387.81,55.4
+Exp1_p_Persistent,p-persistent,5,0.6,11,53,80,44.05,21678.94,58.91
+Exp1_p_Persistent,p-persistent,5,0.6,12,64,80,185.15,19918.81,54.13
+Exp1_p_Persistent,p-persistent,5,0.6,13,77,80,137.74,18354.11,49.88
+Exp1_p_Persistent,p-persistent,5,0.6,14,53,80,59.66,21302.46,57.89
+Exp1_p_Persistent,p-persistent,5,0.6,15,61,80,92.92,20416.09,55.48
+Exp1_p_Persistent,p-persistent,5,0.7,1,50,80,56.61,22002.99,59.79
+Exp1_p_Persistent,p-persistent,5,0.7,2,53,80,70.46,21678.94,58.91
+Exp1_p_Persistent,p-persistent,5,0.7,3,58,80,129.63,20879.43,56.74
+Exp1_p_Persistent,p-persistent,5,0.7,4,72,80,69.02,18920.31,51.41
+Exp1_p_Persistent,p-persistent,5,0.7,5,64,80,146.66,19891.89,54.05
+Exp1_p_Persistent,p-persistent,5,0.7,6,72,80,55.52,18969.07,51.55
+Exp1_p_Persistent,p-persistent,5,0.7,7,53,80,50.4,21855.98,59.39
+Exp1_p_Persistent,p-persistent,5,0.7,8,42,80,91.51,23552.0,64.0
+Exp1_p_Persistent,p-persistent,5,0.7,9,32,80,29.86,25756.78,69.99
+Exp1_p_Persistent,p-persistent,5,0.7,10,67,80,60.42,19561.46,53.16
+Exp1_p_Persistent,p-persistent,5,0.7,11,47,80,90.74,22576.69,61.35
+Exp1_p_Persistent,p-persistent,5,0.7,12,31,80,43.79,25847.23,70.24
+Exp1_p_Persistent,p-persistent,5,0.7,13,59,80,54.21,20645.16,56.1
+Exp1_p_Persistent,p-persistent,5,0.7,14,55,80,63.26,21489.05,58.39
+Exp1_p_Persistent,p-persistent,5,0.7,15,82,80,140.81,17885.78,48.6
+Exp1_p_Persistent,p-persistent,5,0.8,1,62,80,52.29,20275.48,55.1
+Exp1_p_Persistent,p-persistent,5,0.8,2,50,80,155.43,22303.03,60.61
+Exp1_p_Persistent,p-persistent,5,0.8,3,53,80,48.38,21742.98,59.08
+Exp1_p_Persistent,p-persistent,5,0.8,4,44,80,61.37,23217.67,63.09
+Exp1_p_Persistent,p-persistent,5,0.8,5,43,80,40.52,23495.61,63.85
+Exp1_p_Persistent,p-persistent,5,0.8,6,52,80,155.05,22068.97,59.97
+Exp1_p_Persistent,p-persistent,5,0.8,7,35,80,57.47,25227.08,68.55
+Exp1_p_Persistent,p-persistent,5,0.8,8,45,80,135.1,23072.1,62.7
+Exp1_p_Persistent,p-persistent,5,0.8,9,49,80,94.5,22387.83,60.84
+Exp1_p_Persistent,p-persistent,5,0.8,10,37,80,33.3,24760.3,67.28
+Exp1_p_Persistent,p-persistent,5,0.8,11,38,80,42.69,24615.38,66.89
+Exp1_p_Persistent,p-persistent,5,0.8,12,53,80,106.88,21904.76,59.52
+Exp1_p_Persistent,p-persistent,5,0.8,13,61,80,65.19,20703.23,56.26
+Exp1_p_Persistent,p-persistent,5,0.8,14,35,80,34.54,25313.84,68.79
+Exp1_p_Persistent,p-persistent,5,0.8,15,37,80,62.54,24574.29,66.78
+Exp1_p_Persistent,p-persistent,5,0.9,1,63,80,72.4,20219.78,54.95
+Exp1_p_Persistent,p-persistent,5,0.9,2,34,80,36.06,25533.39,69.38
+Exp1_p_Persistent,p-persistent,5,0.9,3,51,80,86.12,22235.65,60.42
+Exp1_p_Persistent,p-persistent,5,0.9,4,43,80,37.81,23589.74,64.1
+Exp1_p_Persistent,p-persistent,5,0.9,5,23,80,22.95,28091.6,76.34
+Exp1_p_Persistent,p-persistent,5,0.9,6,25,80,22.89,27488.33,74.7
+Exp1_p_Persistent,p-persistent,5,0.9,7,29,80,385.65,26594.4,72.27
+Exp1_p_Persistent,p-persistent,5,0.9,8,43,80,55.82,23761.1,64.57
+Exp1_p_Persistent,p-persistent,5,0.9,9,36,80,51.0,25098.04,68.2
+Exp1_p_Persistent,p-persistent,5,0.9,10,47,80,38.65,22892.69,62.21
+Exp1_p_Persistent,p-persistent,5,0.9,11,26,80,24.57,26885.84,73.06
+Exp1_p_Persistent,p-persistent,5,0.9,12,42,80,51.65,24032.65,65.31
+Exp1_p_Persistent,p-persistent,5,0.9,13,35,80,36.5,25292.1,68.73
+Exp1_p_Persistent,p-persistent,5,0.9,14,31,80,25.36,26053.1,70.8
+Exp1_p_Persistent,p-persistent,5,0.9,15,25,80,23.62,27799.81,75.54
+Exp2_Scheme_Comparison,1-Persistent CSMA,2,1.0,1,1,80,17.18,36345.68,98.77
+Exp2_Scheme_Comparison,1-Persistent CSMA,2,1.0,2,1,80,17.11,36345.68,98.77
+Exp2_Scheme_Comparison,1-Persistent CSMA,2,1.0,3,1,80,17.38,36345.68,98.77
+Exp2_Scheme_Comparison,1-Persistent CSMA,2,1.0,4,1,80,17.12,36345.68,98.77
+Exp2_Scheme_Comparison,1-Persistent CSMA,2,1.0,5,1,80,17.33,36345.68,98.77
+Exp2_Scheme_Comparison,1-Persistent CSMA,2,1.0,6,2,80,17.32,35858.71,97.44
+Exp2_Scheme_Comparison,1-Persistent CSMA,2,1.0,7,2,80,17.67,35858.71,97.44
+Exp2_Scheme_Comparison,1-Persistent CSMA,2,1.0,8,1,80,17.33,36345.68,98.77
+Exp2_Scheme_Comparison,1-Persistent CSMA,2,1.0,9,3,80,17.7,35342.14,96.04
+Exp2_Scheme_Comparison,1-Persistent CSMA,2,1.0,10,1,80,17.09,36345.68,98.77
+Exp2_Scheme_Comparison,1-Persistent CSMA,2,1.0,11,1,80,16.84,36345.68,98.77
+Exp2_Scheme_Comparison,1-Persistent CSMA,2,1.0,12,2,80,17.61,35858.71,97.44
+Exp2_Scheme_Comparison,Non-Persistent CSMA,2,0.0,1,3,80,17.83,35257.49,95.81
+Exp2_Scheme_Comparison,Non-Persistent CSMA,2,0.0,2,1,80,17.39,36345.68,98.77
+Exp2_Scheme_Comparison,Non-Persistent CSMA,2,0.0,3,3,80,17.89,35469.88,96.39
+Exp2_Scheme_Comparison,Non-Persistent CSMA,2,0.0,4,1,80,17.05,36345.68,98.77
+Exp2_Scheme_Comparison,Non-Persistent CSMA,2,0.0,5,1,80,17.16,36345.68,98.77
+Exp2_Scheme_Comparison,Non-Persistent CSMA,2,0.0,6,1,80,16.94,36345.68,98.77
+Exp2_Scheme_Comparison,Non-Persistent CSMA,2,0.0,7,1,80,17.23,36345.68,98.77
+Exp2_Scheme_Comparison,Non-Persistent CSMA,2,0.0,8,1,80,17.14,36345.68,98.77
+Exp2_Scheme_Comparison,Non-Persistent CSMA,2,0.0,9,1,80,17.06,36345.68,98.77
+Exp2_Scheme_Comparison,Non-Persistent CSMA,2,0.0,10,2,80,17.49,35902.44,97.56
+Exp2_Scheme_Comparison,Non-Persistent CSMA,2,0.0,11,1,80,17.2,36345.68,98.77
+Exp2_Scheme_Comparison,Non-Persistent CSMA,2,0.0,12,2,80,17.38,35858.71,97.44
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),2,0.1,1,2,80,28.99,23162.86,62.94
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),2,0.1,2,1,80,29.19,22681.05,61.63
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),2,0.1,3,2,80,30.16,22118.71,60.11
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),2,0.1,4,2,80,26.7,24677.28,67.06
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),2,0.1,5,1,80,27.76,23684.63,64.36
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),2,0.1,6,3,80,30.29,22052.43,59.93
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),2,0.1,7,3,80,28.95,23162.86,62.94
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),2,0.1,8,4,80,29.53,22716.05,61.73
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),2,0.1,9,3,80,28.77,23217.67,63.09
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),2,0.1,10,3,80,26.72,24370.86,66.23
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),2,0.1,11,4,80,29.16,22751.16,61.82
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),2,0.1,12,2,80,28.45,23439.49,63.69
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),2,1.0,1,2,80,17.25,36480.79,99.13
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),2,1.0,2,1,80,17.07,36708.23,99.75
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),2,1.0,3,3,80,16.99,36256.16,98.52
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),2,1.0,4,2,80,17.03,36571.43,99.38
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),2,1.0,5,1,80,17.03,36708.23,99.75
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),2,1.0,6,1,80,17.02,36708.23,99.75
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),2,1.0,7,1,80,16.88,36708.23,99.75
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),2,1.0,8,2,80,17.31,36616.92,99.5
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),2,1.0,9,1,80,17.05,36708.23,99.75
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),2,1.0,10,1,80,17.0,36708.23,99.75
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),2,1.0,11,1,80,16.85,36708.23,99.75
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),2,1.0,12,3,80,17.06,36300.86,98.64
+Exp2_Scheme_Comparison,1-Persistent CSMA,3,1.0,1,11,80,19.82,32351.65,87.91
+Exp2_Scheme_Comparison,1-Persistent CSMA,3,1.0,2,15,80,20.85,30859.54,83.86
+Exp2_Scheme_Comparison,1-Persistent CSMA,3,1.0,3,10,80,19.43,32638.58,88.69
+Exp2_Scheme_Comparison,1-Persistent CSMA,3,1.0,4,17,80,21.51,30071.5,81.72
+Exp2_Scheme_Comparison,1-Persistent CSMA,3,1.0,5,15,80,20.94,30762.8,83.59
+Exp2_Scheme_Comparison,1-Persistent CSMA,3,1.0,6,14,80,20.5,31319.15,85.11
+Exp2_Scheme_Comparison,1-Persistent CSMA,3,1.0,7,11,80,19.78,32280.7,87.72
+Exp2_Scheme_Comparison,1-Persistent CSMA,3,1.0,8,22,80,52.0,28806.26,78.28
+Exp2_Scheme_Comparison,1-Persistent CSMA,3,1.0,9,13,80,20.26,31554.13,85.74
+Exp2_Scheme_Comparison,1-Persistent CSMA,3,1.0,10,13,80,20.75,31252.65,84.93
+Exp2_Scheme_Comparison,1-Persistent CSMA,3,1.0,11,17,80,21.35,30163.93,81.97
+Exp2_Scheme_Comparison,1-Persistent CSMA,3,1.0,12,11,80,20.11,32139.74,87.34
+Exp2_Scheme_Comparison,Non-Persistent CSMA,3,0.0,1,11,80,19.69,32351.65,87.91
+Exp2_Scheme_Comparison,Non-Persistent CSMA,3,0.0,2,16,80,25.66,30666.67,83.33
+Exp2_Scheme_Comparison,Non-Persistent CSMA,3,0.0,3,14,80,20.51,31285.87,85.02
+Exp2_Scheme_Comparison,Non-Persistent CSMA,3,0.0,4,14,80,20.55,31186.44,84.75
+Exp2_Scheme_Comparison,Non-Persistent CSMA,3,0.0,5,17,80,21.3,30163.93,81.97
+Exp2_Scheme_Comparison,Non-Persistent CSMA,3,0.0,6,12,80,20.0,32000.0,86.96
+Exp2_Scheme_Comparison,Non-Persistent CSMA,3,0.0,7,11,80,19.86,32280.7,87.72
+Exp2_Scheme_Comparison,Non-Persistent CSMA,3,0.0,8,18,80,21.67,29797.57,80.97
+Exp2_Scheme_Comparison,Non-Persistent CSMA,3,0.0,9,12,80,19.98,31965.26,86.86
+Exp2_Scheme_Comparison,Non-Persistent CSMA,3,0.0,10,12,80,20.02,31965.26,86.86
+Exp2_Scheme_Comparison,Non-Persistent CSMA,3,0.0,11,14,80,20.39,31120.51,84.57
+Exp2_Scheme_Comparison,Non-Persistent CSMA,3,0.0,12,10,80,19.68,32711.11,88.89
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),3,0.1,1,12,80,44.51,24350.7,66.17
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),3,0.1,2,6,80,41.2,24697.99,67.11
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),3,0.1,3,10,80,42.94,23495.61,63.85
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),3,0.1,4,12,80,42.85,24290.43,66.01
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),3,0.1,5,6,80,41.97,24370.86,66.23
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),3,0.1,6,7,80,41.93,24970.31,67.85
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),3,0.1,7,8,80,40.79,24822.93,67.45
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),3,0.1,8,10,80,42.71,24472.15,66.5
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),3,0.1,9,12,80,44.7,22910.51,62.26
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),3,0.1,10,4,80,40.63,25119.45,68.26
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),3,0.1,11,10,80,40.91,24330.58,66.12
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),3,0.1,12,6,80,38.91,25248.71,68.61
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),3,1.0,1,12,80,17.69,35555.56,96.62
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),3,1.0,2,11,80,17.85,35598.55,96.74
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),3,1.0,3,12,80,17.85,35512.67,96.5
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),3,1.0,4,11,80,17.34,35684.85,96.97
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),3,1.0,5,11,80,17.76,35384.62,96.15
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),3,1.0,6,13,80,18.0,35215.31,95.69
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),3,1.0,7,12,80,17.75,35512.67,96.5
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),3,1.0,8,11,80,17.68,35598.55,96.74
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),3,1.0,9,12,80,17.61,35555.56,96.62
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),3,1.0,10,12,80,17.6,35469.88,96.39
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),3,1.0,11,13,80,17.81,35342.14,96.04
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),3,1.0,12,11,80,17.59,35512.67,96.5
+Exp2_Scheme_Comparison,1-Persistent CSMA,4,1.0,1,23,80,22.94,28416.99,77.22
+Exp2_Scheme_Comparison,1-Persistent CSMA,4,1.0,2,20,80,21.63,29381.24,79.84
+Exp2_Scheme_Comparison,1-Persistent CSMA,4,1.0,3,18,80,21.41,29979.63,81.47
+Exp2_Scheme_Comparison,1-Persistent CSMA,4,1.0,4,22,80,28.26,28666.02,77.9
+Exp2_Scheme_Comparison,1-Persistent CSMA,4,1.0,5,25,80,27.16,28038.1,76.19
+Exp2_Scheme_Comparison,1-Persistent CSMA,4,1.0,6,24,80,23.62,28011.42,76.12
+Exp2_Scheme_Comparison,1-Persistent CSMA,4,1.0,7,29,80,28.49,26959.71,73.26
+Exp2_Scheme_Comparison,1-Persistent CSMA,4,1.0,8,21,80,21.82,28976.38,78.74
+Exp2_Scheme_Comparison,1-Persistent CSMA,4,1.0,9,23,80,22.95,28280.5,76.85
+Exp2_Scheme_Comparison,1-Persistent CSMA,4,1.0,10,19,80,22.0,29587.94,80.4
+Exp2_Scheme_Comparison,1-Persistent CSMA,4,1.0,11,16,80,21.04,30602.91,83.16
+Exp2_Scheme_Comparison,1-Persistent CSMA,4,1.0,12,37,80,81.03,25076.66,68.14
+Exp2_Scheme_Comparison,Non-Persistent CSMA,4,0.0,1,22,80,22.63,28693.96,77.97
+Exp2_Scheme_Comparison,Non-Persistent CSMA,4,0.0,2,32,80,29.05,25869.95,70.3
+Exp2_Scheme_Comparison,Non-Persistent CSMA,4,0.0,3,24,80,25.15,27984.79,76.05
+Exp2_Scheme_Comparison,Non-Persistent CSMA,4,0.0,4,20,80,21.84,29410.59,79.92
+Exp2_Scheme_Comparison,Non-Persistent CSMA,4,0.0,5,20,80,28.15,29410.59,79.92
+Exp2_Scheme_Comparison,Non-Persistent CSMA,4,0.0,6,26,80,31.22,27565.54,74.91
+Exp2_Scheme_Comparison,Non-Persistent CSMA,4,0.0,7,18,80,22.0,29617.71,80.48
+Exp2_Scheme_Comparison,Non-Persistent CSMA,4,0.0,8,24,80,22.93,28172.25,76.56
+Exp2_Scheme_Comparison,Non-Persistent CSMA,4,0.0,9,21,80,22.73,28721.95,78.05
+Exp2_Scheme_Comparison,Non-Persistent CSMA,4,0.0,10,20,80,22.1,29322.71,79.68
+Exp2_Scheme_Comparison,Non-Persistent CSMA,4,0.0,11,34,80,72.42,25533.39,69.38
+Exp2_Scheme_Comparison,Non-Persistent CSMA,4,0.0,12,19,80,21.99,29677.42,80.65
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),4,0.1,1,16,80,57.67,24190.63,65.74
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),4,0.1,2,15,80,55.06,24052.29,65.36
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),4,0.1,3,10,80,52.42,26192.17,71.17
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),4,0.1,4,11,80,55.2,25248.71,68.61
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),4,0.1,5,20,80,60.47,23476.87,63.8
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),4,0.1,6,11,80,53.43,26451.03,71.88
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),4,0.1,7,16,80,53.36,25379.31,68.97
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),4,0.1,8,9,80,49.74,27033.98,73.46
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),4,0.1,9,17,80,60.15,24032.65,65.31
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),4,0.1,10,13,80,53.36,25779.33,70.05
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),4,0.1,11,5,80,48.59,28610.3,77.75
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),4,0.1,12,10,80,53.47,25801.93,70.11
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),4,1.0,1,20,80,18.28,34757.97,94.45
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),4,1.0,2,22,80,18.43,34312.35,93.24
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),4,1.0,3,19,80,17.87,34757.97,94.45
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),4,1.0,4,22,80,17.81,34635.29,94.12
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),4,1.0,5,17,80,18.09,35131.26,95.47
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),4,1.0,6,20,80,18.15,34635.29,94.12
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),4,1.0,7,16,80,16.9,34881.52,94.79
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),4,1.0,8,17,80,17.85,35089.39,95.35
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),4,1.0,9,14,80,18.04,35089.39,95.35
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),4,1.0,10,27,80,18.73,34192.8,92.92
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),4,1.0,11,25,80,18.78,33995.38,92.38
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),4,1.0,12,21,80,18.12,34799.05,94.56
+Exp2_Scheme_Comparison,1-Persistent CSMA,5,1.0,1,27,80,24.43,27335.19,74.28
+Exp2_Scheme_Comparison,1-Persistent CSMA,5,1.0,2,22,80,22.66,28778.1,78.2
+Exp2_Scheme_Comparison,1-Persistent CSMA,5,1.0,3,23,80,23.11,28226.27,76.7
+Exp2_Scheme_Comparison,1-Persistent CSMA,5,1.0,4,36,80,32.33,25270.39,68.67
+Exp2_Scheme_Comparison,1-Persistent CSMA,5,1.0,5,25,80,23.57,27905.21,75.83
+Exp2_Scheme_Comparison,1-Persistent CSMA,5,1.0,6,22,80,22.82,28499.52,77.44
+Exp2_Scheme_Comparison,1-Persistent CSMA,5,1.0,7,23,80,22.73,28334.94,77.0
+Exp2_Scheme_Comparison,1-Persistent CSMA,5,1.0,8,32,80,33.68,26145.65,71.05
+Exp2_Scheme_Comparison,1-Persistent CSMA,5,1.0,9,27,80,23.72,27462.69,74.63
+Exp2_Scheme_Comparison,1-Persistent CSMA,5,1.0,10,36,80,47.68,25248.71,68.61
+Exp2_Scheme_Comparison,1-Persistent CSMA,5,1.0,11,27,80,23.75,27437.09,74.56
+Exp2_Scheme_Comparison,1-Persistent CSMA,5,1.0,12,33,80,47.26,25984.11,70.61
+Exp2_Scheme_Comparison,Non-Persistent CSMA,5,0.0,1,24,80,32.25,28199.23,76.63
+Exp2_Scheme_Comparison,Non-Persistent CSMA,5,0.0,2,39,80,40.53,24656.62,67.0
+Exp2_Scheme_Comparison,Non-Persistent CSMA,5,0.0,3,22,80,22.73,28778.1,78.2
+Exp2_Scheme_Comparison,Non-Persistent CSMA,5,0.0,4,30,80,28.69,26666.67,72.46
+Exp2_Scheme_Comparison,Non-Persistent CSMA,5,0.0,5,31,80,25.25,26285.71,71.43
+Exp2_Scheme_Comparison,Non-Persistent CSMA,5,0.0,6,28,80,24.41,27183.75,73.87
+Exp2_Scheme_Comparison,Non-Persistent CSMA,5,0.0,7,54,80,90.49,21839.76,59.35
+Exp2_Scheme_Comparison,Non-Persistent CSMA,5,0.0,8,32,80,24.97,26145.65,71.05
+Exp2_Scheme_Comparison,Non-Persistent CSMA,5,0.0,9,30,80,46.36,26498.65,72.01
+Exp2_Scheme_Comparison,Non-Persistent CSMA,5,0.0,10,25,80,23.49,27747.41,75.4
+Exp2_Scheme_Comparison,Non-Persistent CSMA,5,0.0,11,31,80,26.69,26427.29,71.81
+Exp2_Scheme_Comparison,Non-Persistent CSMA,5,0.0,12,23,80,22.83,28499.52,77.44
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),5,0.1,1,15,80,66.6,26861.31,72.99
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),5,0.1,2,12,80,62.61,27488.33,74.7
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),5,0.1,3,14,80,64.93,26666.67,72.46
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),5,0.1,4,26,80,73.79,23439.49,63.69
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),5,0.1,5,8,80,64.25,27931.69,75.9
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),5,0.1,6,12,80,61.85,28118.43,76.41
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),5,0.1,7,7,80,63.86,28721.95,78.05
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),5,0.1,8,13,80,65.45,26618.44,72.33
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),5,0.1,9,21,80,69.42,24492.51,66.56
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),5,0.1,10,16,80,66.64,25756.78,69.99
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),5,0.1,11,17,80,66.88,25511.27,69.32
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),5,0.1,12,11,80,65.44,27309.83,74.21
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),5,1.0,1,24,80,18.31,34312.35,93.24
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),5,1.0,2,19,80,20.15,34881.52,94.79
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),5,1.0,3,24,80,18.78,34153.13,92.81
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),5,1.0,4,27,80,18.98,33722.79,91.64
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),5,1.0,5,25,80,18.62,34034.68,92.49
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),5,1.0,6,24,80,18.39,34312.35,93.24
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),5,1.0,7,32,80,22.63,33454.55,90.91
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),5,1.0,8,33,80,20.68,33607.31,91.32
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),5,1.0,9,25,80,18.51,34074.07,92.59
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),5,1.0,10,29,80,18.91,33722.79,91.64
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),5,1.0,11,34,80,22.32,33153.15,90.09
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),5,1.0,12,26,80,18.45,34232.56,93.02
+Exp2_Scheme_Comparison,1-Persistent CSMA,6,1.0,1,31,80,25.26,26007.07,70.67
+Exp2_Scheme_Comparison,1-Persistent CSMA,6,1.0,2,37,80,39.16,25012.74,67.97
+Exp2_Scheme_Comparison,1-Persistent CSMA,6,1.0,3,33,80,25.51,26007.07,70.67
+Exp2_Scheme_Comparison,1-Persistent CSMA,6,1.0,4,41,80,35.29,24071.95,65.41
+Exp2_Scheme_Comparison,1-Persistent CSMA,6,1.0,5,31,80,37.03,26076.17,70.86
+Exp2_Scheme_Comparison,1-Persistent CSMA,6,1.0,6,32,80,25.12,26215.49,71.24
+Exp2_Scheme_Comparison,1-Persistent CSMA,6,1.0,7,40,80,56.43,24290.43,66.01
+Exp2_Scheme_Comparison,1-Persistent CSMA,6,1.0,8,37,80,26.65,24906.94,67.68
+Exp2_Scheme_Comparison,1-Persistent CSMA,6,1.0,9,30,80,24.76,26356.31,71.62
+Exp2_Scheme_Comparison,1-Persistent CSMA,6,1.0,10,30,80,25.68,26474.82,71.94
+Exp2_Scheme_Comparison,1-Persistent CSMA,6,1.0,11,36,80,42.72,25119.45,68.26
+Exp2_Scheme_Comparison,1-Persistent CSMA,6,1.0,12,39,80,41.24,24635.98,66.95
+Exp2_Scheme_Comparison,Non-Persistent CSMA,6,0.0,1,38,80,44.97,24864.86,67.57
+Exp2_Scheme_Comparison,Non-Persistent CSMA,6,0.0,2,40,80,45.18,24310.49,66.06
+Exp2_Scheme_Comparison,Non-Persistent CSMA,6,0.0,3,37,80,30.65,25076.66,68.14
+Exp2_Scheme_Comparison,Non-Persistent CSMA,6,0.0,4,39,80,34.28,24615.38,66.89
+Exp2_Scheme_Comparison,Non-Persistent CSMA,6,0.0,5,32,80,25.16,26076.17,70.86
+Exp2_Scheme_Comparison,Non-Persistent CSMA,6,0.0,6,37,80,78.79,24822.93,67.45
+Exp2_Scheme_Comparison,Non-Persistent CSMA,6,0.0,7,34,80,25.73,25666.96,69.75
+Exp2_Scheme_Comparison,Non-Persistent CSMA,6,0.0,8,32,80,25.3,26076.17,70.86
+Exp2_Scheme_Comparison,Non-Persistent CSMA,6,0.0,9,36,80,26.15,25076.66,68.14
+Exp2_Scheme_Comparison,Non-Persistent CSMA,6,0.0,10,34,80,34.34,25622.28,69.63
+Exp2_Scheme_Comparison,Non-Persistent CSMA,6,0.0,11,40,80,41.83,24210.53,65.79
+Exp2_Scheme_Comparison,Non-Persistent CSMA,6,0.0,12,31,80,25.53,26238.86,71.3
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),6,0.1,1,29,80,82.99,23915.52,64.99
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),6,0.1,2,13,80,75.26,28862.75,78.43
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),6,0.1,3,22,80,81.08,25892.7,70.36
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),6,0.1,4,14,80,77.31,27284.52,74.14
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),6,0.1,5,20,80,77.89,26618.44,72.33
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),6,0.1,6,21,80,85.35,25270.39,68.67
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),6,0.1,7,11,80,75.84,27826.09,75.61
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),6,0.1,8,16,80,78.07,27033.98,73.46
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),6,0.1,9,24,80,81.92,25445.12,69.14
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),6,0.1,10,31,80,90.86,23162.86,62.94
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),6,0.1,11,23,80,86.55,24656.62,67.0
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),6,0.1,12,9,80,75.76,29119.68,79.13
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),6,1.0,1,38,80,34.03,32674.81,88.79
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),6,1.0,2,25,80,18.4,34153.13,92.81
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),6,1.0,3,28,80,19.07,33416.57,90.81
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),6,1.0,4,47,80,37.2,31689.99,86.11
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),6,1.0,5,38,80,22.45,32566.37,88.5
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),6,1.0,6,32,80,19.69,33684.21,91.53
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),6,1.0,7,28,80,17.21,33956.17,92.27
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),6,1.0,8,36,80,19.6,32638.58,88.69
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),6,1.0,9,27,80,18.64,34113.56,92.7
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),6,1.0,10,35,80,24.51,33416.57,90.81
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),6,1.0,11,36,80,60.3,32820.51,89.19
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),6,1.0,12,27,80,19.26,33839.08,91.95
+Exp2_Scheme_Comparison,1-Persistent CSMA,7,1.0,1,37,80,26.49,24885.88,67.62
+Exp2_Scheme_Comparison,1-Persistent CSMA,7,1.0,2,48,80,84.66,22946.22,62.35
+Exp2_Scheme_Comparison,1-Persistent CSMA,7,1.0,3,34,80,33.94,25689.35,69.81
+Exp2_Scheme_Comparison,1-Persistent CSMA,7,1.0,4,43,80,56.26,23780.29,64.62
+Exp2_Scheme_Comparison,1-Persistent CSMA,7,1.0,5,43,80,47.08,23684.63,64.36
+Exp2_Scheme_Comparison,1-Persistent CSMA,7,1.0,6,56,80,71.61,21536.21,58.52
+Exp2_Scheme_Comparison,1-Persistent CSMA,7,1.0,7,56,80,123.22,21442.1,58.27
+Exp2_Scheme_Comparison,1-Persistent CSMA,7,1.0,8,35,80,45.37,25489.18,69.26
+Exp2_Scheme_Comparison,1-Persistent CSMA,7,1.0,9,38,80,26.59,24885.88,67.62
+Exp2_Scheme_Comparison,1-Persistent CSMA,7,1.0,10,33,80,25.04,25938.33,70.48
+Exp2_Scheme_Comparison,1-Persistent CSMA,7,1.0,11,39,80,66.52,24553.79,66.72
+Exp2_Scheme_Comparison,1-Persistent CSMA,7,1.0,12,34,80,25.51,25666.96,69.75
+Exp2_Scheme_Comparison,Non-Persistent CSMA,7,0.0,1,44,80,36.91,23199.37,63.04
+Exp2_Scheme_Comparison,Non-Persistent CSMA,7,0.0,2,46,80,36.58,23235.99,63.14
+Exp2_Scheme_Comparison,Non-Persistent CSMA,7,0.0,3,37,80,32.79,24949.15,67.8
+Exp2_Scheme_Comparison,Non-Persistent CSMA,7,0.0,4,53,80,48.29,22068.97,59.97
+Exp2_Scheme_Comparison,Non-Persistent CSMA,7,0.0,5,41,80,27.4,24190.63,65.74
+Exp2_Scheme_Comparison,Non-Persistent CSMA,7,0.0,6,38,80,41.34,24822.93,67.45
+Exp2_Scheme_Comparison,Non-Persistent CSMA,7,0.0,7,38,80,26.74,24864.86,67.57
+Exp2_Scheme_Comparison,Non-Persistent CSMA,7,0.0,8,34,80,25.77,25734.27,69.93
+Exp2_Scheme_Comparison,Non-Persistent CSMA,7,0.0,9,29,80,24.44,26836.83,72.93
+Exp2_Scheme_Comparison,Non-Persistent CSMA,7,0.0,10,36,80,26.34,25162.39,68.38
+Exp2_Scheme_Comparison,Non-Persistent CSMA,7,0.0,11,45,80,33.0,23328.05,63.39
+Exp2_Scheme_Comparison,Non-Persistent CSMA,7,0.0,12,36,80,26.39,25313.84,68.79
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),7,0.1,1,32,80,102.65,24230.45,65.84
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),7,0.1,2,21,80,91.74,25847.23,70.24
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),7,0.1,3,34,80,106.48,23199.37,63.04
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),7,0.1,4,17,80,86.47,27747.41,75.4
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),7,0.1,5,27,80,110.74,24885.88,67.62
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),7,0.1,6,25,80,100.05,24533.33,66.67
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),7,0.1,7,25,80,102.33,25335.63,68.85
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),7,0.1,8,26,80,98.5,25270.39,68.67
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),7,0.1,9,25,80,110.84,24802.02,67.4
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),7,0.1,10,21,80,110.15,26403.59,71.75
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),7,0.1,11,26,80,93.77,25119.45,68.26
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),7,0.1,12,25,80,96.41,25533.39,69.38
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),7,1.0,1,30,80,18.74,33645.71,91.43
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),7,1.0,2,38,80,22.38,33153.15,90.09
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),7,1.0,3,35,80,19.01,33340.88,90.6
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),7,1.0,4,40,80,57.26,32967.53,89.59
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),7,1.0,5,45,80,34.67,32174.86,87.43
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),7,1.0,6,37,80,20.94,33153.15,90.09
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),7,1.0,7,35,80,21.79,33378.68,90.7
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),7,1.0,8,44,80,24.86,32387.24,88.01
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),7,1.0,9,41,80,18.48,32711.11,88.89
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),7,1.0,10,37,80,19.31,32857.14,89.29
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),7,1.0,11,54,80,102.1,31792.66,86.39
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),7,1.0,12,34,80,19.24,33078.65,89.89
+Exp2_Scheme_Comparison,1-Persistent CSMA,8,1.0,1,34,80,25.61,25666.96,69.75
+Exp2_Scheme_Comparison,1-Persistent CSMA,8,1.0,2,61,80,156.62,20761.64,56.42
+Exp2_Scheme_Comparison,1-Persistent CSMA,8,1.0,3,55,80,61.88,21726.94,59.04
+Exp2_Scheme_Comparison,1-Persistent CSMA,8,1.0,4,36,80,24.41,25205.48,68.49
+Exp2_Scheme_Comparison,1-Persistent CSMA,8,1.0,5,48,80,64.99,22839.41,62.06
+Exp2_Scheme_Comparison,1-Persistent CSMA,8,1.0,6,42,80,28.36,23799.51,64.67
+Exp2_Scheme_Comparison,1-Persistent CSMA,8,1.0,7,40,80,27.53,24150.94,65.63
+Exp2_Scheme_Comparison,1-Persistent CSMA,8,1.0,8,44,80,28.37,23291.14,63.29
+Exp2_Scheme_Comparison,1-Persistent CSMA,8,1.0,9,52,80,52.25,22085.52,60.02
+Exp2_Scheme_Comparison,1-Persistent CSMA,8,1.0,10,45,80,66.41,23199.37,63.04
+Exp2_Scheme_Comparison,1-Persistent CSMA,8,1.0,11,67,80,76.33,19771.66,53.73
+Exp2_Scheme_Comparison,1-Persistent CSMA,8,1.0,12,55,80,176.96,21647.06,58.82
+Exp2_Scheme_Comparison,Non-Persistent CSMA,8,0.0,1,46,80,84.83,23181.1,62.99
+Exp2_Scheme_Comparison,Non-Persistent CSMA,8,0.0,2,42,80,66.09,23954.43,65.09
+Exp2_Scheme_Comparison,Non-Persistent CSMA,8,0.0,3,43,80,28.68,23309.58,63.34
+Exp2_Scheme_Comparison,Non-Persistent CSMA,8,0.0,4,39,80,49.61,24615.38,66.89
+Exp2_Scheme_Comparison,Non-Persistent CSMA,8,0.0,5,42,80,28.35,23665.59,64.31
+Exp2_Scheme_Comparison,Non-Persistent CSMA,8,0.0,6,58,80,266.19,20968.66,56.98
+Exp2_Scheme_Comparison,Non-Persistent CSMA,8,0.0,7,59,80,70.75,20909.09,56.82
+Exp2_Scheme_Comparison,Non-Persistent CSMA,8,0.0,8,63,80,116.12,20401.94,55.44
+Exp2_Scheme_Comparison,Non-Persistent CSMA,8,0.0,9,61,80,59.07,20717.8,56.3
+Exp2_Scheme_Comparison,Non-Persistent CSMA,8,0.0,10,59,80,67.75,21103.94,57.35
+Exp2_Scheme_Comparison,Non-Persistent CSMA,8,0.0,11,38,80,26.68,24822.93,67.45
+Exp2_Scheme_Comparison,Non-Persistent CSMA,8,0.0,12,41,80,27.89,23954.43,65.09
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),8,0.1,1,26,80,107.68,25489.18,69.26
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),8,0.1,2,28,80,110.56,24739.5,67.23
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),8,0.1,3,22,80,115.2,26332.74,71.56
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),8,0.1,4,35,80,120.84,23476.87,63.8
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),8,0.1,5,38,80,125.98,22786.38,61.92
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),8,0.1,6,36,80,142.65,23291.14,63.29
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),8,0.1,7,29,80,112.22,24991.51,67.91
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),8,0.1,8,25,80,109.48,25445.12,69.14
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),8,0.1,9,32,80,110.78,24697.99,67.11
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),8,0.1,10,27,80,120.87,25622.28,69.63
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),8,0.1,11,29,80,113.04,24843.88,67.51
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),8,0.1,12,35,80,127.35,23254.34,63.19
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),8,1.0,1,50,80,37.63,31965.26,86.86
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),8,1.0,2,59,80,53.59,30859.54,83.86
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),8,1.0,3,45,80,154.65,32494.48,88.3
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),8,1.0,4,35,80,19.14,33568.99,91.22
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),8,1.0,5,46,80,26.33,32210.07,87.53
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),8,1.0,6,54,80,37.84,31621.91,85.93
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),8,1.0,7,36,80,36.29,33340.88,90.6
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),8,1.0,8,44,80,29.94,32245.35,87.62
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),8,1.0,9,37,80,24.21,33004.48,89.69
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),8,1.0,10,53,80,53.19,32174.86,87.43
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),8,1.0,11,49,80,29.09,31758.36,86.3
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),8,1.0,12,56,80,34.49,31827.03,86.49
+Exp2_Scheme_Comparison,1-Persistent CSMA,9,1.0,1,46,80,39.31,23054.03,62.65
+Exp2_Scheme_Comparison,1-Persistent CSMA,9,1.0,2,57,80,51.95,21225.67,57.68
+Exp2_Scheme_Comparison,1-Persistent CSMA,9,1.0,3,43,80,34.16,23780.29,64.62
+Exp2_Scheme_Comparison,1-Persistent CSMA,9,1.0,4,42,80,27.81,23761.1,64.57
+Exp2_Scheme_Comparison,1-Persistent CSMA,9,1.0,5,43,80,28.08,23665.59,64.31
+Exp2_Scheme_Comparison,1-Persistent CSMA,9,1.0,6,46,80,28.81,23235.99,63.14
+Exp2_Scheme_Comparison,1-Persistent CSMA,9,1.0,7,51,80,67.71,22353.83,60.74
+Exp2_Scheme_Comparison,1-Persistent CSMA,9,1.0,8,50,80,67.55,22576.69,61.35
+Exp2_Scheme_Comparison,1-Persistent CSMA,9,1.0,9,61,80,64.76,20776.29,56.46
+Exp2_Scheme_Comparison,1-Persistent CSMA,9,1.0,10,46,80,39.21,23328.05,63.39
+Exp2_Scheme_Comparison,1-Persistent CSMA,9,1.0,11,52,80,50.58,22085.52,60.02
+Exp2_Scheme_Comparison,1-Persistent CSMA,9,1.0,12,67,80,130.51,19705.49,53.55
+Exp2_Scheme_Comparison,Non-Persistent CSMA,9,0.0,1,48,80,29.41,22839.41,62.06
+Exp2_Scheme_Comparison,Non-Persistent CSMA,9,0.0,2,58,80,112.51,21225.67,57.68
+Exp2_Scheme_Comparison,Non-Persistent CSMA,9,0.0,3,57,80,100.96,21348.8,58.01
+Exp2_Scheme_Comparison,Non-Persistent CSMA,9,0.0,4,59,80,98.95,20983.61,57.02
+Exp2_Scheme_Comparison,Non-Persistent CSMA,9,0.0,5,45,80,58.6,23402.23,63.59
+Exp2_Scheme_Comparison,Non-Persistent CSMA,9,0.0,6,54,80,52.66,21775.15,59.17
+Exp2_Scheme_Comparison,Non-Persistent CSMA,9,0.0,7,40,80,27.03,24492.51,66.56
+Exp2_Scheme_Comparison,Non-Persistent CSMA,9,0.0,8,46,80,92.88,23162.86,62.94
+Exp2_Scheme_Comparison,Non-Persistent CSMA,9,0.0,9,44,80,49.63,23439.49,63.69
+Exp2_Scheme_Comparison,Non-Persistent CSMA,9,0.0,10,47,80,39.24,23035.99,62.6
+Exp2_Scheme_Comparison,Non-Persistent CSMA,9,0.0,11,47,80,56.81,22716.05,61.73
+Exp2_Scheme_Comparison,Non-Persistent CSMA,9,0.0,12,45,80,69.07,23476.87,63.8
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),9,0.1,1,32,80,137.36,24370.86,66.23
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),9,0.1,2,29,80,136.33,24970.31,67.85
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),9,0.1,3,39,80,126.39,22751.16,61.82
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),9,0.1,4,30,80,122.87,24472.15,66.5
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),9,0.1,5,42,80,135.99,22218.87,60.38
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),9,0.1,6,34,80,143.79,23838.06,64.78
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),9,0.1,7,33,80,135.33,24111.38,65.52
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),9,0.1,8,37,80,132.31,23761.1,64.57
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),9,0.1,9,30,80,137.05,24906.94,67.68
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),9,0.1,10,44,80,149.68,21775.15,59.17
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),9,0.1,11,31,80,130.92,24760.3,67.28
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),9,0.1,12,34,80,129.69,24170.77,65.68
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),9,1.0,1,52,80,100.18,32245.35,87.62
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),9,1.0,2,61,80,43.78,30413.22,82.64
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),9,1.0,3,54,80,27.74,31452.99,85.47
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),9,1.0,4,49,80,24.49,32351.65,87.91
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),9,1.0,5,47,80,32.83,31792.66,86.39
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),9,1.0,6,48,80,33.71,31486.63,85.56
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),9,1.0,7,46,80,25.71,32280.7,87.72
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),9,1.0,8,39,80,33.88,33041.53,89.79
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),9,1.0,9,61,80,71.5,30956.89,84.12
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),9,1.0,10,49,80,26.78,32210.07,87.53
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),9,1.0,11,38,80,20.7,33004.48,89.69
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),9,1.0,12,36,80,19.0,33153.15,90.09
+Exp2_Scheme_Comparison,1-Persistent CSMA,10,1.0,1,57,80,98.7,20953.74,56.94
+Exp2_Scheme_Comparison,1-Persistent CSMA,10,1.0,2,54,80,60.28,21855.98,59.39
+Exp2_Scheme_Comparison,1-Persistent CSMA,10,1.0,3,62,80,32.37,20529.99,55.79
+Exp2_Scheme_Comparison,1-Persistent CSMA,10,1.0,4,55,80,41.91,21710.91,59.0
+Exp2_Scheme_Comparison,1-Persistent CSMA,10,1.0,5,63,80,82.48,20458.65,55.59
+Exp2_Scheme_Comparison,1-Persistent CSMA,10,1.0,6,45,80,28.23,23383.64,63.54
+Exp2_Scheme_Comparison,1-Persistent CSMA,10,1.0,7,62,80,90.82,20688.69,56.22
+Exp2_Scheme_Comparison,1-Persistent CSMA,10,1.0,8,60,80,157.41,20849.86,56.66
+Exp2_Scheme_Comparison,1-Persistent CSMA,10,1.0,9,47,80,29.03,23072.1,62.7
+Exp2_Scheme_Comparison,1-Persistent CSMA,10,1.0,10,45,80,29.19,23017.98,62.55
+Exp2_Scheme_Comparison,1-Persistent CSMA,10,1.0,11,45,80,53.26,23309.58,63.34
+Exp2_Scheme_Comparison,1-Persistent CSMA,10,1.0,12,54,80,36.99,21726.94,59.04
+Exp2_Scheme_Comparison,Non-Persistent CSMA,10,0.0,1,44,80,28.25,23533.17,63.95
+Exp2_Scheme_Comparison,Non-Persistent CSMA,10,0.0,2,49,80,29.22,22663.59,61.59
+Exp2_Scheme_Comparison,Non-Persistent CSMA,10,0.0,3,73,80,73.31,19116.88,51.95
+Exp2_Scheme_Comparison,Non-Persistent CSMA,10,0.0,4,64,80,101.03,20247.59,55.02
+Exp2_Scheme_Comparison,Non-Persistent CSMA,10,0.0,5,52,80,54.37,22035.93,59.88
+Exp2_Scheme_Comparison,Non-Persistent CSMA,10,0.0,6,60,80,191.23,20820.37,56.58
+Exp2_Scheme_Comparison,Non-Persistent CSMA,10,0.0,7,94,80,172.86,16755.83,45.53
+Exp2_Scheme_Comparison,Non-Persistent CSMA,10,0.0,8,54,80,72.87,21775.15,59.17
+Exp2_Scheme_Comparison,Non-Persistent CSMA,10,0.0,9,52,80,54.54,22035.93,59.88
+Exp2_Scheme_Comparison,Non-Persistent CSMA,10,0.0,10,51,80,57.07,22370.82,60.79
+Exp2_Scheme_Comparison,Non-Persistent CSMA,10,0.0,11,60,80,66.93,20776.29,56.46
+Exp2_Scheme_Comparison,Non-Persistent CSMA,10,0.0,12,56,80,31.14,21551.98,58.57
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),10,0.1,1,50,80,173.6,21442.1,58.27
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),10,0.1,2,39,80,153.01,23458.17,63.75
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),10,0.1,3,42,80,143.08,22681.05,61.63
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),10,0.1,4,52,80,145.59,21287.06,57.85
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),10,0.1,5,37,80,142.64,23993.48,65.2
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),10,0.1,6,58,80,158.05,20040.84,54.46
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),10,0.1,7,37,80,151.45,23838.06,64.78
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),10,0.1,8,39,80,153.32,23108.32,62.79
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),10,0.1,9,33,80,146.12,24350.7,66.17
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),10,0.1,10,48,80,158.02,21583.58,58.65
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),10,0.1,11,46,80,160.45,22019.45,59.84
+Exp2_Scheme_Comparison,p-Persistent CSMA (best p=0.10),10,0.1,12,34,80,149.58,24290.43,66.01
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),10,1.0,1,55,80,48.52,31252.65,84.93
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),10,1.0,2,66,80,35.7,30133.06,81.88
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),10,1.0,3,68,80,35.54,30666.67,83.33
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),10,1.0,4,46,80,28.29,32458.65,88.2
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),10,1.0,5,56,80,27.99,31153.44,84.66
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),10,1.0,6,51,80,36.7,32000.0,86.96
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),10,1.0,7,56,80,32.95,31452.99,85.47
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),10,1.0,8,53,80,33.6,31724.14,86.21
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),10,1.0,9,57,80,35.55,31520.34,85.65
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),10,1.0,10,47,80,19.65,32566.37,88.5
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),10,1.0,11,68,80,35.76,30634.76,83.25
+Exp2_Scheme_Comparison,CSMA/CD (Listen-While-Talk),10,1.0,12,49,80,31.12,31252.65,84.93
