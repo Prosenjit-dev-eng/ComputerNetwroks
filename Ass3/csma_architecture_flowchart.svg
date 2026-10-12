@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="100%" height="100%" style="background-color: #ffffff; font-family: 'Segoe UI', Arial, sans-serif;">
+  <defs>
+    <!-- Drop Shadow Filter for Mermaid Look -->
+    <filter id="mermaid-shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.08" />
+    </filter>
+
+    <!-- Marker Arrows -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#334155" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#ef4444" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#10b981" />
+    </marker>
+  </defs>
+
+  <!-- Title Banner -->
+  <text x="500" y="35" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">CSMA/CD System Architecture &amp; Concurrent Channel Model</text>
+  <text x="500" y="58" text-anchor="middle" font-size="12" fill="#64748b">IEEE 802 Standard Full-Duplex Listen-While-Talk Channel Emulation</text>
+
+  <!-- 1. Shared Medium Server Box (Top) -->
+  <g filter="url(#mermaid-shadow)">
+    <rect x="180" y="85" width="640" height="135" rx="10" fill="#f8fafc" stroke="#3b82f6" stroke-width="2.2" />
+    <rect x="180" y="85" width="640" height="34" rx="10" fill="#3b82f6" />
+    <rect x="180" y="105" width="640" height="14" fill="#3b82f6" />
+    <text x="500" y="108" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">SHARED PHYSICAL MEDIUM (server.exe : TCP Port 5050)</text>
+
+    <!-- Channel States -->
+    <rect x="210" y="135" width="165" height="60" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5" />
+    <text x="292" y="160" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">IDLE STATE</text>
+    <text x="292" y="178" text-anchor="middle" font-size="11" fill="#047857">activeTransmitters == 0</text>
+
+    <rect x="415" y="135" width="170" height="60" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="500" y="160" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e">BUSY STATE</text>
+    <text x="500" y="178" text-anchor="middle" font-size="11" fill="#b45309">activeTransmitters == 1</text>
+
+    <rect x="625" y="135" width="165" height="60" rx="8" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5" />
+    <text x="707" y="160" text-anchor="middle" font-size="12" font-weight="700" fill="#991b1b">COLLISION STATE</text>
+    <text x="707" y="178" text-anchor="middle" font-size="11" fill="#b91c1c">activeTransmitters &gt;= 2</text>
+  </g>
+
+  <!-- Connectors: Server to Stations -->
+  <!-- Left station TX_START / SENSE line -->
+  <line x1="280" y1="220" x2="280" y2="295" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)" />
+  <rect x="220" y="245" width="120" height="22" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+  <text x="280" y="260" text-anchor="middle" font-size="10.5" font-weight="600" fill="#334155">SENSE / TX_START</text>
+
+  <!-- Broadcast Collision alert down to Listener Thread -->
+  <path d="M 720 220 L 720 295" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arrow-red)" />
+  <rect x="635" y="245" width="170" height="22" rx="4" fill="#ffffff" stroke="#fca5a5" stroke-width="1" />
+  <text x="720" y="260" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ef4444">Broadcast "COLLISION\n"</text>
+
+  <!-- 2. Station 1 Node Box (Bottom) -->
+  <g filter="url(#mermaid-shadow)">
+    <rect x="60" y="295" width="880" height="380" rx="12" fill="#f8fafc" stroke="#64748b" stroke-width="2" />
+    <rect x="60" y="295" width="880" height="32" rx="12" fill="#475569" />
+    <rect x="60" y="315" width="880" height="12" fill="#475569" />
+    <text x="500" y="317" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">CONTENDING STATION NODE ARCHITECTURE (Concurrent Win32 Full-Duplex Design)</text>
+
+    <!-- Subgraph Left: Transmit (Main) Thread -->
+    <rect x="90" y="345" width="370" height="305" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
+    <rect x="90" y="345" width="370" height="28" rx="8" fill="#e2e8f0" />
+    <text x="275" y="364" text-anchor="middle" font-size="12" font-weight="700" fill="#1e293b">TRANSMIT (MAIN) THREAD</text>
+
+    <!-- Step 1: Encapsulate Frame -->
+    <rect x="115" y="385" width="320" height="38" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3" />
+    <text x="275" y="408" text-anchor="middle" font-size="11" font-weight="600" fill="#1e40af">1. Encapsulate IEEE 802 Frame (15B + 46B + CRC-32)</text>
+
+    <!-- Arrow -->
+    <line x1="275" y1="423" x2="275" y2="440" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+
+    <!-- Step 2: Sense Carrier -->
+    <rect x="115" y="440" width="320" height="38" rx="6" fill="#f0fdf4" stroke="#10b981" stroke-width="1.3" />
+    <text x="275" y="463" text-anchor="middle" font-size="11" font-weight="600" fill="#166534">2. Carrier Sense: Wait until Medium is IDLE</text>
+
+    <!-- Arrow -->
+    <line x1="275" y1="478" x2="275" y2="495" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+
+    <!-- Step 3: Stream chunks & listen -->
+    <rect x="115" y="495" width="320" height="42" rx="6" fill="#fefce8" stroke="#eab308" stroke-width="1.3" />
+    <text x="275" y="513" text-anchor="middle" font-size="11" font-weight="600" fill="#854d0e">3. Send TX_START &amp; Stream Frame Chunks</text>
+    <text x="275" y="528" text-anchor="middle" font-size="10" fill="#a16207">Polls g_collision_detected on every chunk</text>
+
+    <!-- Arrow -->
+    <line x1="275" y1="537" x2="275" y2="554" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+
+    <!-- Step 4: Normal Completion -->
+    <rect x="115" y="554" width="320" height="40" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="1.3" />
+    <text x="275" y="572" text-anchor="middle" font-size="11" font-weight="700" fill="#047857">4. No Collision: Send TX_END</text>
+    <text x="275" y="587" text-anchor="middle" font-size="10" fill="#065f46">Server verifies CRC-32 FCS -&gt; SUCCESS</text>
+
+
+    <!-- Subgraph Right: Background Listener & Backoff Engine -->
+    <rect x="540" y="345" width="370" height="305" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
+    <rect x="540" y="345" width="370" height="28" rx="8" fill="#fee2e2" />
+    <text x="725" y="364" text-anchor="middle" font-size="12" font-weight="700" fill="#991b1b">LISTENER THREAD &amp; EARLY ABORT ENGINE</text>
+
+    <!-- Step L1: Background recv() -->
+    <rect x="565" y="385" width="320" height="38" rx="6" fill="#f8fafc" stroke="#64748b" stroke-width="1.3" />
+    <text x="725" y="408" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">1. Continuous recv() on socket</text>
+
+    <!-- Arrow -->
+    <line x1="725" y1="423" x2="725" y2="440" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrow-red)" />
+
+    <!-- Step L2: Set Atomic Flag -->
+    <rect x="565" y="440" width="320" height="40" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5" />
+    <text x="725" y="458" text-anchor="middle" font-size="11" font-weight="700" fill="#b91c1c">2. On "COLLISION": Set Atomic Flag</text>
+    <text x="725" y="473" text-anchor="middle" font-size="10" font-weight="600" fill="#dc2626">g_collision_detected.store(true)</text>
+
+    <!-- Arrow -->
+    <line x1="725" y1="480" x2="725" y2="497" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrow-red)" />
+
+    <!-- Step L3: Abort & JAM -->
+    <rect x="565" y="497" width="320" height="42" rx="6" fill="#fff7ed" stroke="#f97316" stroke-width="1.3" />
+    <text x="725" y="515" text-anchor="middle" font-size="11" font-weight="700" fill="#c2410c">3. Mid-Transmission Abort &amp; Send JAM</text>
+    <text x="725" y="530" text-anchor="middle" font-size="10" fill="#ea580c">Wastes only 2 slots (2tau) instead of full frame</text>
+
+    <!-- Arrow -->
+    <line x1="725" y1="539" x2="725" y2="556" stroke="#f97316" stroke-width="1.5" marker-end="url(#arrow)" />
+
+    <!-- Step L4: Exponential Backoff -->
+    <rect x="565" y="556" width="320" height="48" rx="6" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.3" />
+    <text x="725" y="575" text-anchor="middle" font-size="11" font-weight="700" fill="#6d28d9">4. Truncated Binary Exponential Backoff</text>
+    <text x="725" y="592" text-anchor="middle" font-size="10.5" fill="#7c3aed">W = 2^min(k, 10) - 1, Delay = r * SLOT_TIME_MS</text>
+  </g>
+
+  <!-- Cross-Thread Atomic Flag Arrow in middle -->
+  <path d="M 565 460 L 460 515" stroke="#ef4444" stroke-width="2.2" stroke-dasharray="4,3" marker-end="url(#arrow-red)" />
+  <rect x="460" y="475" width="105" height="22" rx="4" fill="#ffffff" stroke="#ef4444" stroke-width="1.2" />
+  <text x="512" y="490" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ef4444">Early Abort Trigger</text>
+
+  <!-- Backoff Loop Arrow returning to Sense -->
+  <path d="M 565 580 C 490 635, 380 635, 275 490" stroke="#8b5cf6" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow)" fill="none" />
+  <rect x="360" y="618" width="130" height="20" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1" />
+  <text x="425" y="632" text-anchor="middle" font-size="9.5" font-weight="600" fill="#6d28d9">Retry Sensing (k &lt;= 15)</text>
+</svg>

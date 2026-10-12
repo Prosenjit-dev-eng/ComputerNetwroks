@@ -331,6 +331,7 @@ struct StationState {
     int framesDropped{0};       // Dropped due to 15 backoffs exhausted
     int collisionDrops{0};      // Collisions that caused drop or retry
     int totalCollisions{0};
+    int totalDeferrals{0};      // Carrier sense busy deferrals
     double totalDelayMs{0.0};
     long long totalPayloadBits{0};
 };
@@ -426,14 +427,14 @@ string senseChannel(StationState* st) {
     return (st->channelState.load() == 0) ? "IDLE" : "BUSY";
 }
 
-int applyExponentialBackoff(StationState* st, int attempt) {
+int applyExponentialBackoff(StationState* st, int attempt, const string &reason = "Collision") {
     int k = min(attempt, 10);
     int maxSlots = (1 << k);
     int randomSlots = rand() % maxSlots;
     int backoffMs = randomSlots * SLOT_TIME_MS;
 
     stringstream ss;
-    ss << "   [Station " << st->stationId << "] Collision #" << attempt 
+    ss << "   [Station " << st->stationId << "] " << reason << " #" << attempt 
        << " -> Window W=[0.." << (maxSlots - 1) << "]. Backing off " 
        << randomSlots << " slots (" << backoffMs << " ms)\n";
     printLog(ss.str());
@@ -485,7 +486,7 @@ bool transmitCsmaCd(StationState* st, int frameSeq, const Frame &frame, int &out
         }
 
         if (midFrameCollision) {
-            applyExponentialBackoff(st, attempt);
+            applyExponentialBackoff(st, attempt, "Collision");
             continue;
         }
 
@@ -503,7 +504,7 @@ bool transmitCsmaCd(StationState* st, int frameSeq, const Frame &frame, int &out
             stringstream ss;
             ss << " [Station " << st->stationId << "] Collision at frame conclusion. Backing off...\n";
             printLog(ss.str());
-            applyExponentialBackoff(st, attempt);
+            applyExponentialBackoff(st, attempt, "Collision");
             continue;
         }
 
@@ -556,7 +557,7 @@ bool transmit1Persistent(StationState* st, int frameSeq, const Frame &frame, int
             stringstream ss;
             ss << " [Station " << st->stationId << "] Collision for Frame #" << frameSeq << "! Backing off...\n";
             printLog(ss.str());
-            applyExponentialBackoff(st, attempt);
+            applyExponentialBackoff(st, attempt, "Collision");
         } else {
             auto deliveryTime = high_resolution_clock::now();
             outDelayMs = duration_cast<milliseconds>(deliveryTime - queueTime).count();
@@ -573,7 +574,7 @@ bool transmit1Persistent(StationState* st, int frameSeq, const Frame &frame, int
 // ----------------------------------------------------------------------------
 // Non-Persistent CSMA
 // ----------------------------------------------------------------------------
-bool transmitNonPersistent(StationState* st, int frameSeq, const Frame &frame, int &outCollisions, double &outDelayMs) {
+bool transmitNonPersistent(StationState* st, int frameSeq, const Frame &frame, int &outCollisions, int &outDeferrals, double &outDelayMs) {
     auto queueTime = high_resolution_clock::now();
     string bitstream = frame.serialize();
     int totalBits = (int)bitstream.length();
@@ -581,10 +582,11 @@ bool transmitNonPersistent(StationState* st, int frameSeq, const Frame &frame, i
     for (int attempt = 1; attempt <= MAX_BACKOFF_ATTEMPTS; attempt++) {
         string state = senseChannel(st);
         if (state != "IDLE") {
+            outDeferrals++;
             stringstream ss;
             ss << " [Station " << st->stationId << "] Channel BUSY. Non-persistent deferral...\n";
             printLog(ss.str());
-            applyExponentialBackoff(st, attempt);
+            applyExponentialBackoff(st, attempt, "Busy-Deferral");
             continue;
         }
 
@@ -604,7 +606,10 @@ bool transmitNonPersistent(StationState* st, int frameSeq, const Frame &frame, i
 
         if (st->collisionDetected.load() || reply == "COLLISION") {
             outCollisions++;
-            applyExponentialBackoff(st, attempt);
+            stringstream ss;
+            ss << " [Station " << st->stationId << "] Collision for Frame #" << frameSeq << "! Backing off...\n";
+            printLog(ss.str());
+            applyExponentialBackoff(st, attempt, "Collision");
         } else {
             auto deliveryTime = high_resolution_clock::now();
             outDelayMs = duration_cast<milliseconds>(deliveryTime - queueTime).count();
@@ -662,7 +667,10 @@ bool transmitPPersistent(StationState* st, int frameSeq, double p, const Frame &
 
         if (st->collisionDetected.load() || reply == "COLLISION") {
             outCollisions++;
-            applyExponentialBackoff(st, attempt);
+            stringstream ss;
+            ss << " [Station " << st->stationId << "] Collision for Frame #" << frameSeq << "! Backing off...\n";
+            printLog(ss.str());
+            applyExponentialBackoff(st, attempt, "Collision");
         } else {
             auto deliveryTime = high_resolution_clock::now();
             outDelayMs = duration_cast<milliseconds>(deliveryTime - queueTime).count();
@@ -722,6 +730,7 @@ DWORD WINAPI stationThreadFunc(LPVOID lpParam) {
         Frame frame = createIEEE802Frame(st->stationId, f, payloadText);
 
         int collisions = 0;
+        int deferrals = 0;
         double delayMs = 0.0;
         bool success = false;
 
@@ -730,7 +739,7 @@ DWORD WINAPI stationThreadFunc(LPVOID lpParam) {
                 success = transmit1Persistent(st, f, frame, collisions, delayMs);
                 break;
             case 2:
-                success = transmitNonPersistent(st, f, frame, collisions, delayMs);
+                success = transmitNonPersistent(st, f, frame, collisions, deferrals, delayMs);
                 break;
             case 3:
                 success = transmitPPersistent(st, f, st->probP, frame, collisions, delayMs);
@@ -742,6 +751,7 @@ DWORD WINAPI stationThreadFunc(LPVOID lpParam) {
         }
 
         st->totalCollisions += collisions;
+        st->totalDeferrals += deferrals;
 
         if (success) {
             st->framesDelivered++;
@@ -791,7 +801,7 @@ int main(int argc, char* argv[]) {
     double probP        = 0.5;  // Default: p=0.5 for p-persistent
     int port            = 5055; // Port 5055 to avoid clashes
 
-    // CLI Argument Parsing: simulation.exe [N] [strategy] [numFrames] [p] [port]
+    // CLI Argument Parsing: simulation.exe [N] [strategy] [numFrames] [p/port] [port]
     if (argc > 1) {
         numStations = atoi(argv[1]);
         if (numStations <= 0) numStations = 5;
@@ -804,14 +814,21 @@ int main(int argc, char* argv[]) {
         numFrames = atoi(argv[3]);
         if (numFrames <= 0) numFrames = 3;
     }
-    if (argc > 4 && strategyChoice == 3) {
-        probP = atof(argv[4]);
-        if (probP <= 0.0) probP = 0.1;
-        if (probP > 1.0) probP = 1.0;
-    }
-    if (argc > 5) {
-        port = atoi(argv[5]);
-        if (port <= 1024 || port > 65535) port = 5055;
+    if (strategyChoice == 3) {
+        if (argc > 4) {
+            probP = atof(argv[4]);
+            if (probP <= 0.0) probP = 0.1;
+            if (probP > 1.0) probP = 1.0;
+        }
+        if (argc > 5) {
+            port = atoi(argv[5]);
+            if (port <= 1024 || port > 65535) port = 5055;
+        }
+    } else {
+        if (argc > 4) {
+            port = atoi(argv[4]);
+            if (port <= 1024 || port > 65535) port = 5055;
+        }
     }
 
     string modeName = (strategyChoice == 1) ? "1-Persistent CSMA" :
@@ -897,18 +914,19 @@ int main(int argc, char* argv[]) {
     int aggDropped   = 0;
     int aggCollisionDrops = 0;
     int aggCollisions = 0;
+    int aggDeferrals = 0;
     double aggDelaySum = 0.0;
     long long aggPayloadBits = 0;
 
     cout << "\n===================================================================\n";
     cout << "                    PER-STATION RESULTS SUMMARY                    \n";
     cout << "===================================================================\n";
-    cout << left << setw(10) << "Station" 
-         << setw(12) << "Attempted" 
-         << setw(12) << "Delivered" 
-         << setw(14) << "Frame Drops" 
-         << setw(16) << "Collision Drops"
-         << setw(14) << "Collisions" 
+    cout << left << setw(9)  << "Station" 
+         << setw(11) << "Attempted" 
+         << setw(11) << "Delivered" 
+         << setw(13) << "Frame Drops" 
+         << setw(12) << "Collisions"
+         << setw(12) << "Deferrals" 
          << setw(14) << "Avg Delay(ms)" << "\n";
     cout << string(82, '-') << "\n";
 
@@ -919,17 +937,18 @@ int main(int argc, char* argv[]) {
         aggDropped        += st.framesDropped;
         aggCollisionDrops += st.collisionDrops;
         aggCollisions     += st.totalCollisions;
+        aggDeferrals      += st.totalDeferrals;
         aggDelaySum       += st.totalDelayMs;
         aggPayloadBits    += st.totalPayloadBits;
 
         double stAvgDelay = (st.framesDelivered > 0) ? (st.totalDelayMs / st.framesDelivered) : 0.0;
 
-        cout << left << setw(10) << ("#" + to_string(st.stationId))
-             << setw(12) << st.framesAttempted
-             << setw(12) << st.framesDelivered
-             << setw(14) << st.framesDropped
-             << setw(16) << st.collisionDrops
-             << setw(14) << st.totalCollisions
+        cout << left << setw(9) << ("#" + to_string(st.stationId))
+             << setw(11) << st.framesAttempted
+             << setw(11) << st.framesDelivered
+             << setw(13) << st.framesDropped
+             << setw(12) << st.totalCollisions
+             << setw(12) << st.totalDeferrals
              << fixed << setprecision(2) << setw(14) << stAvgDelay << "\n";
     }
 
@@ -949,7 +968,8 @@ int main(int argc, char* argv[]) {
     cout << " >> TOTAL FRAME DROPS      : " << aggDropped << " (" << fixed << setprecision(1) << dropRate << "%)\n";
     cout << " >> TOTAL COLLISION DROPS  : " << aggCollisionDrops << "\n";
     cout << " >> TOTAL COLLISIONS LOGGED: " << aggCollisions << "\n";
-    cout << " ------------------------------------------------------------------\n";
+    cout << " >> TOTAL BUSY DEFERRALS   : " << aggDeferrals << "\n";
+     cout << " ------------------------------------------------------------------\n";
     cout << " Channel Delivery Rate     : " << fixed << setprecision(2) << deliveryRate << " %\n";
     cout << " Average Delay per Frame   : " << fixed << setprecision(2) << avgDelayAll << " ms\n";
     cout << " Total Simulation Time     : " << fixed << setprecision(2) << totalElapsedSec << " s\n";

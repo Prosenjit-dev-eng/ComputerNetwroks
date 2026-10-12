@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 980" width="100%" height="100%" style="background-color: #ffffff; font-family: 'Segoe UI', Arial, sans-serif;">
+  <defs>
+    <!-- Drop Shadow Filter for Mermaid Look -->
+    <filter id="m-shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="3.5" flood-color="#000000" flood-opacity="0.08" />
+    </filter>
+
+    <!-- Marker Arrows -->
+    <marker id="m-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#334155" />
+    </marker>
+    <marker id="m-arrow-red" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#ef4444" />
+    </marker>
+    <marker id="m-arrow-green" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#10b981" />
+    </marker>
+  </defs>
+
+  <!-- Title Banner -->
+  <text x="475" y="32" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">CSMA Transmission Strategies &amp; CSMA/CD State Machine</text>
+  <text x="475" y="52" text-anchor="middle" font-size="11.5" fill="#64748b">Procedural Flowchart for 1-Persistent, Non-Persistent, p-Persistent, and CSMA/CD</text>
+
+  <!-- 1. Start Node (Stadium/Pill) -->
+  <g filter="url(#m-shadow)">
+    <rect x="365" y="75" width="220" height="42" rx="21" fill="#ecfdf5" stroke="#10b981" stroke-width="2" />
+    <text x="475" y="101" text-anchor="middle" font-size="13" font-weight="700" fill="#065f46">Frame Ready to Transmit</text>
+  </g>
+
+  <!-- Arrow down to Sense -->
+  <line x1="475" y1="117" x2="475" y2="155" stroke="#334155" stroke-width="1.8" marker-end="url(#m-arrow)" />
+
+  <!-- 2. Decision: Carrier Sense (Diamond) -->
+  <g filter="url(#m-shadow)">
+    <polygon points="475,155 605,210 475,265 345,210" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" />
+    <text x="475" y="206" text-anchor="middle" font-size="12.5" font-weight="700" fill="#92400e">Is Medium IDLE?</text>
+    <text x="475" y="222" text-anchor="middle" font-size="10.5" fill="#b45309">(Sense Channel)</text>
+  </g>
+
+  <!-- Branch NO: Channel is BUSY (Left Branch) -->
+  <line x1="345" y1="210" x2="190" y2="210" stroke="#ef4444" stroke-width="1.8" marker-end="url(#m-arrow-red)" />
+  <rect x="235" y="195" width="60" height="20" rx="4" fill="#fee2e2" stroke="#ef4444" stroke-width="1" />
+  <text x="265" y="209" text-anchor="middle" font-size="10" font-weight="700" fill="#991b1b">BUSY</text>
+
+  <!-- Box: Scheme behaviors on BUSY -->
+  <g filter="url(#m-shadow)">
+    <rect x="35" y="245" width="310" height="150" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" />
+    <rect x="35" y="245" width="310" height="26" rx="8" fill="#e2e8f0" />
+    <text x="190" y="263" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1e293b">BEHAVIOR UPON BUSY MEDIUM</text>
+
+    <text x="50" y="292" font-size="11" font-weight="600" fill="#d97706">&bull; 1-Persistent / CSMA/CD:</text>
+    <text x="65" y="308" font-size="10.5" fill="#475569">Continuously sense medium until IDLE</text>
+
+    <text x="50" y="332" font-size="11" font-weight="600" fill="#0284c7">&bull; Non-Persistent:</text>
+    <text x="65" y="348" font-size="10.5" fill="#475569">Defer immediately with random backoff</text>
+
+    <text x="50" y="372" font-size="11" font-weight="600" fill="#7c3aed">&bull; p-Persistent:</text>
+    <text x="65" y="388" font-size="10.5" fill="#475569">Wait until IDLE, then roll probability p</text>
+  </g>
+  <line x1="190" y1="210" x2="190" y2="245" stroke="#ef4444" stroke-width="1.8" marker-end="url(#m-arrow-red)" />
+
+  <!-- Loop back from 1-Persistent spin wait -->
+  <path d="M 190 395 L 190 420 L 400 420 L 400 230 L 355 230" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#m-arrow)" fill="none" />
+  <text x="290" y="415" font-size="9.5" fill="#64748b">re-sense when IDLE</text>
+
+  <!-- Branch YES: Channel is IDLE (Downwards) -->
+  <line x1="475" y1="265" x2="475" y2="310" stroke="#10b981" stroke-width="2" marker-end="url(#m-arrow-green)" />
+  <rect x="485" y="278" width="55" height="20" rx="4" fill="#ecfdf5" stroke="#10b981" stroke-width="1" />
+  <text x="512" y="292" text-anchor="middle" font-size="10" font-weight="700" fill="#065f46">IDLE</text>
+
+  <!-- 3. Decision: p-Persistent check -->
+  <g filter="url(#m-shadow)">
+    <polygon points="475,310 595,355 475,400 355,355" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.8" />
+    <text x="475" y="351" text-anchor="middle" font-size="12" font-weight="700" fill="#5b21b6">p-Persistent CSMA?</text>
+    <text x="475" y="367" text-anchor="middle" font-size="10" fill="#6d28d9">Roll r in [0, 1]</text>
+  </g>
+
+  <!-- If p-persistent r >= p, defer 1 slot -->
+  <line x1="595" y1="355" x2="720" y2="355" stroke="#8b5cf6" stroke-width="1.8" marker-end="url(#m-arrow)" />
+  <rect x="615" y="340" width="80" height="20" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1" />
+  <text x="655" y="354" text-anchor="middle" font-size="10" font-weight="600" fill="#6d28d9">r &gt;= p (defer)</text>
+
+  <rect x="720" y="335" width="190" height="40" rx="6" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.3" />
+  <text x="815" y="352" text-anchor="middle" font-size="11" font-weight="600" fill="#5b21b6">Wait 1 Slot (tau)</text>
+  <text x="815" y="367" text-anchor="middle" font-size="10" fill="#7c3aed">Re-sense next slot</text>
+
+  <!-- Loop back from 1 slot wait to Sense -->
+  <path d="M 815 335 L 815 210 L 615 210" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#m-arrow)" fill="none" />
+
+  <!-- If r < p OR other schemes: Begin Transmission -->
+  <line x1="475" y1="400" x2="475" y2="440" stroke="#10b981" stroke-width="2" marker-end="url(#m-arrow-green)" />
+  <rect x="485" y="410" width="85" height="20" rx="4" fill="#ecfdf5" stroke="#10b981" stroke-width="1" />
+  <text x="527" y="424" text-anchor="middle" font-size="9.5" font-weight="600" fill="#065f46">r &lt; p / Transmit</text>
+
+  <!-- 4. Node: Transmit TX_START & Stream Chunk -->
+  <g filter="url(#m-shadow)">
+    <rect x="325" y="440" width="300" height="52" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8" />
+    <text x="475" y="462" text-anchor="middle" font-size="12" font-weight="700" fill="#1e40af">Send TX_START to Channel</text>
+    <text x="475" y="479" text-anchor="middle" font-size="10.5" fill="#2563eb">Transmit Bitstream Chunk-by-Chunk</text>
+  </g>
+
+  <!-- Arrow down to Collision Detection -->
+  <line x1="475" y1="492" x2="475" y2="530" stroke="#334155" stroke-width="1.8" marker-end="url(#m-arrow)" />
+
+  <!-- 5. Decision: Mid-Frame Collision? (CSMA/CD) -->
+  <g filter="url(#m-shadow)">
+    <polygon points="475,530 615,585 475,640 335,585" fill="#fee2e2" stroke="#ef4444" stroke-width="2" />
+    <text x="475" y="580" text-anchor="middle" font-size="12" font-weight="700" fill="#991b1b">Collision Detected?</text>
+    <text x="475" y="596" text-anchor="middle" font-size="10" fill="#b91c1c">(g_collision_detected)</text>
+  </g>
+
+  <!-- Branch YES: Collision occurred (Right branch) -->
+  <line x1="615" y1="585" x2="720" y2="585" stroke="#ef4444" stroke-width="2" marker-end="url(#m-arrow-red)" />
+  <rect x="635" y="570" width="60" height="20" rx="4" fill="#fee2e2" stroke="#ef4444" stroke-width="1" />
+  <text x="665" y="584" text-anchor="middle" font-size="10" font-weight="700" fill="#991b1b">YES</text>
+
+  <!-- Action: Abort & Jam -->
+  <g filter="url(#m-shadow)">
+    <rect x="720" y="560" width="200" height="50" rx="8" fill="#fff7ed" stroke="#f97316" stroke-width="1.8" />
+    <text x="820" y="581" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c2410c">ABORT Transmission</text>
+    <text x="820" y="598" text-anchor="middle" font-size="10" fill="#ea580c">Send 32-bit JAM Signal (2tau)</text>
+  </g>
+
+  <!-- Arrow down from Abort to Retry Limit Check -->
+  <line x1="820" y1="610" x2="820" y2="650" stroke="#ef4444" stroke-width="1.8" marker-end="url(#m-arrow-red)" />
+
+  <!-- Decision: Max Retries? -->
+  <g filter="url(#m-shadow)">
+    <polygon points="820,650 910,695 820,740 730,695" fill="#fef2f2" stroke="#dc2626" stroke-width="1.8" />
+    <text x="820" y="692" text-anchor="middle" font-size="11.5" font-weight="700" fill="#991b1b">k &gt; 15?</text>
+    <text x="820" y="707" text-anchor="middle" font-size="9.5" fill="#b91c1c">(Max Attempts)</text>
+  </g>
+
+  <!-- If k > 15: Drop Frame (Right/Down) -->
+  <line x1="910" y1="695" x2="930" y2="695" stroke="#ef4444" stroke-width="1.5" />
+  <path d="M 930 695 L 930 790 L 850 790" stroke="#ef4444" stroke-width="1.5" marker-end="url(#m-arrow-red)" />
+  <rect x="730" y="770" width="180" height="40" rx="20" fill="#fef2f2" stroke="#ef4444" stroke-width="1.8" />
+  <text x="820" y="794" text-anchor="middle" font-size="11.5" font-weight="700" fill="#b91c1c">DROP FRAME (Drop++)</text>
+
+  <!-- If k <= 15: Exponential Backoff (Down/Left) -->
+  <line x1="820" y1="740" x2="820" y2="820" stroke="#8b5cf6" stroke-width="1.8" />
+  <line x1="820" y1="820" x2="680" y2="820" stroke="#8b5cf6" stroke-width="1.8" marker-end="url(#m-arrow)" />
+  <rect x="735" y="808" width="60" height="20" rx="4" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1" />
+  <text x="765" y="822" text-anchor="middle" font-size="10" font-weight="600" fill="#6d28d9">NO (k++)</text>
+
+  <!-- Box: Truncated Binary Exponential Backoff -->
+  <g filter="url(#m-shadow)">
+    <rect x="375" y="795" width="300" height="52" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.8" />
+    <text x="525" y="816" text-anchor="middle" font-size="12" font-weight="700" fill="#6d28d9">Truncated Binary Exponential Backoff</text>
+    <text x="525" y="833" text-anchor="middle" font-size="10.5" fill="#7c3aed">W = 2^min(k, 10) - 1, Sleep r * SLOT_TIME_MS</text>
+  </g>
+
+  <!-- Loop back from Backoff to Sense -->
+  <path d="M 375 820 L 15 820 L 15 210 L 340 210" stroke="#8b5cf6" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#m-arrow)" fill="none" />
+  <rect x="110" y="808" width="140" height="20" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1" />
+  <text x="180" y="822" text-anchor="middle" font-size="10" font-weight="600" fill="#6d28d9">Wait backoff, then re-sense</text>
+
+  <!-- Branch NO on Collision: Clean Transmission Completion -->
+  <line x1="475" y1="640" x2="475" y2="685" stroke="#10b981" stroke-width="2" marker-end="url(#m-arrow-green)" />
+  <rect x="485" y="650" width="75" height="20" rx="4" fill="#ecfdf5" stroke="#10b981" stroke-width="1" />
+  <text x="522" y="664" text-anchor="middle" font-size="10" font-weight="700" fill="#065f46">NO (Clean)</text>
+
+  <!-- Box: Send TX_END & CRC-32 -->
+  <g filter="url(#m-shadow)">
+    <rect x="335" y="685" width="280" height="50" rx="8" fill="#f0fdf4" stroke="#10b981" stroke-width="1.8" />
+    <text x="475" y="707" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">Send TX_END to Channel</text>
+    <text x="475" y="723" text-anchor="middle" font-size="10.5" fill="#15803d">Server validates 32-bit CRC (FCS)</text>
+  </g>
+
+  <!-- Arrow down to Final Success Node -->
+  <line x1="475" y1="735" x2="475" y2="880" stroke="#10b981" stroke-width="2" marker-end="url(#m-arrow-green)" />
+
+  <!-- Final Success Node (Stadium/Pill) -->
+  <g filter="url(#m-shadow)">
+    <rect x="360" y="880" width="230" height="44" rx="22" fill="#dcfce7" stroke="#16a34a" stroke-width="2.2" />
+    <text x="475" y="907" text-anchor="middle" font-size="13" font-weight="700" fill="#15803d">SUCCESS: Frame Delivered!</text>
+  </g>
+</svg>

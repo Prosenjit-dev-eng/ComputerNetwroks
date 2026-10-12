@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="mermaid.min.js"></script>
+<script>
+window.onload = function() {
+    mermaid.initialize({startOnLoad: true, theme: 'default'});
+};
+</script>
+</head>
+<body>
+<h1>Mermaid Test</h1>
+<div class="mermaid">
+graph TD
+    A[Start] --> B{Is Idle?}
+    B -- Yes --> C[Transmit]
+    B -- No --> D[Backoff]
+</div>
+</body>
+</html>
