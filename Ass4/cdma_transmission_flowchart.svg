@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%" style="background-color: #ffffff; font-family: 'Segoe UI', Arial, sans-serif;">
+  <defs>
+    <!-- Drop Shadow Filter -->
+    <filter id="flow-shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.08" />
+    </filter>
+
+    <!-- Marker Arrows -->
+    <marker id="flow-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#334155" />
+    </marker>
+    <marker id="flow-arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#059669" />
+    </marker>
+    <marker id="flow-arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626" />
+    </marker>
+  </defs>
+
+  <!-- Title Banner -->
+  <text x="500" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">CDMA Spread Spectrum Transmission &amp; Despreading State Flow</text>
+  <text x="500" y="52" text-anchor="middle" font-size="12" fill="#64748b">Mathematical Progression: Bipolar Chip Modulation &#x2192; Channel Superposition &#x2192; Correlator Recovery</text>
+
+  <!-- Step 1: Walsh Matrix Generation (Top Center) -->
+  <g filter="url(#flow-shadow)">
+    <rect x="260" y="75" width="480" height="65" rx="8" fill="#f8fafc" stroke="#3b82f6" stroke-width="1.8" />
+    <text x="500" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">1. Sylvester-Hadamard Walsh Matrix Generation (Order N = 2^k &#x2265; n)</text>
+    <text x="500" y="122" text-anchor="middle" font-size="11" fill="#334155">H_1 = [1],  H_2k = [[H_k, H_k], [H_k, -H_k]]  |  Orthogonality Verified: C_i &#x22C5; C_j = N &#x22C5; &#x3B4;_ij</text>
+  </g>
+
+  <!-- Arrow down to Split -->
+  <line x1="500" y1="140" x2="500" y2="175" stroke="#334155" stroke-width="1.8" marker-end="url(#flow-arrow)" />
+
+  <!-- Step 2: Station Data Framing -->
+  <g filter="url(#flow-shadow)">
+    <rect x="220" y="175" width="560" height="65" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.8" />
+    <text x="500" y="198" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">2. IEEE 802 Frame Construction &amp; CRC-32 FCS Calculation</text>
+    <text x="500" y="220" text-anchor="middle" font-size="11" fill="#1d4ed8">Header (Src MAC, Dest MAC, Length, Seq) + Padded Payload (&#x2265; 46B) + 32-bit CRC Tailer</text>
+  </g>
+
+  <!-- Arrow down to Spreading -->
+  <line x1="500" y1="240" x2="500" y2="275" stroke="#334155" stroke-width="1.8" marker-end="url(#flow-arrow)" />
+
+  <!-- Step 3: Modulation & Spreading -->
+  <g filter="url(#flow-shadow)">
+    <rect x="200" y="275" width="600" height="70" rx="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8" />
+    <text x="500" y="298" text-anchor="middle" font-size="13" font-weight="700" fill="#6d28d9">3. Bipolar Bitstream Modulation &amp; Walsh Chip Spreading</text>
+    <text x="500" y="318" text-anchor="middle" font-size="11" fill="#5b21b6">Bit Mapping: '1' &#x2192; +1, '0' &#x2192; -1  |  Station Chipping Sequence: S_i[t] = d_i[t] &#xD7; C_i</text>
+    <text x="500" y="334" text-anchor="middle" font-size="10.5" fill="#475569">Spread Factor = N chips per bit  (Processing Gain G_p = 10 log10(N) dB)</text>
+  </g>
+
+  <!-- Arrow down to Channel Superposition -->
+  <line x1="500" y1="345" x2="500" y2="380" stroke="#334155" stroke-width="1.8" marker-end="url(#flow-arrow)" />
+
+  <!-- Step 4: Shared Medium Linear Superposition -->
+  <g filter="url(#flow-shadow)">
+    <rect x="160" y="380" width="680" height="75" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2" />
+    <text x="500" y="403" text-anchor="middle" font-size="13" font-weight="700" fill="#991b1b">4. Shared Medium Physical Channel Superposition (Vector Addition)</text>
+    <text x="500" y="423" text-anchor="middle" font-size="11" fill="#b91c1c">C_composite[t] = &#x2211; S_i[t] = S_0[t] + S_1[t] + ... + S_n-1[t]  (Simultaneous Multi-Access)</text>
+    <text x="500" y="441" text-anchor="middle" font-size="10.5" fill="#475569">Collision-Free: Signals overlap linearly as multi-level voltages without contention loss</text>
+  </g>
+
+  <!-- Arrow down to Correlator -->
+  <line x1="500" y1="455" x2="500" y2="490" stroke="#334155" stroke-width="1.8" marker-end="url(#flow-arrow)" />
+
+  <!-- Step 5: Receiver Inner Product Correlator -->
+  <g filter="url(#flow-shadow)">
+    <rect x="180" y="490" width="640" height="70" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="1.8" />
+    <text x="500" y="513" text-anchor="middle" font-size="13" font-weight="700" fill="#065f46">5. Receiver Inner-Product Correlator Despreader</text>
+    <text x="500" y="533" text-anchor="middle" font-size="11" fill="#047857">Inner Product: P_j = (C_composite &#x22C5; C_j) / N = d_j &#x22C5; (C_j &#x22C5; C_j)/N + &#x2211; d_i &#x22C5; (C_i &#x22C5; C_j)/N</text>
+    <text x="500" y="549" text-anchor="middle" font-size="10.5" font-weight="600" fill="#0f766e">Due to Orthogonality: (C_i &#x22C5; C_j) = 0 (&#x2200; i &#x2260; j) &#x21D2; P_j = d_j  (100% Perfect Cancellation of Crosstalk!)</text>
+  </g>
+
+  <!-- Split Arrow down to Step 6 -->
+  <line x1="500" y1="560" x2="500" y2="590" stroke="#334155" stroke-width="1.8" marker-end="url(#flow-arrow)" />
+
+  <!-- Step 6 & 7: Decision Threshold & Frame Integrity -->
+  <g filter="url(#flow-shadow)">
+    <rect x="120" y="590" width="760" height="65" rx="8" fill="#f8fafc" stroke="#0284c7" stroke-width="1.8" />
+    <text x="500" y="612" text-anchor="middle" font-size="13" font-weight="700" fill="#0369a1">6 &amp; 7. Decision Slicing &amp; IEEE 802 CRC-32 Frame Integrity Verification</text>
+    <text x="500" y="632" text-anchor="middle" font-size="11" fill="#334155">Bit Decision: P_j &gt; 0 &#x2192; Bit '1' | P_j &lt; 0 &#x2192; Bit '0'  |  Payload &amp; FCS Deserialization</text>
+    <text x="500" y="648" text-anchor="middle" font-size="10.5" font-weight="700" fill="#059669">&#x2714; Computed CRC-32 matches Frame FCS &#x2192; Status: PASS [OK] &#x2192; Zero Bit Errors</text>
+  </g>
+</svg>

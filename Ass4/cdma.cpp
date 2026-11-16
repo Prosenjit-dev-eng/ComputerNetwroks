@@ -224,7 +224,7 @@ vector<double> addChannelNoise(const vector<int> &compositeSignal, double snr_dB
 
     vector<double> noisy(compositeSignal.size());
     for (size_t i = 0; i < compositeSignal.size(); i++) {
-        noisy[i] = (double)compositeSignal[i] + dist(gen);
+        noisy[i] = (double)compositeSignal[i] + dist(gen);   
     }
 
     return noisy;

@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2200 3100" width="2200" height="3100" style="background-color:#0b0f19; font-family: Segoe UI, Arial, sans-serif;">
+<defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1 L 10 5 L 0 9 z" fill="#60a5fa" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1 L 10 5 L 0 9 z" fill="#34d399" />
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1 L 10 5 L 0 9 z" fill="#a855f7" />
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b" />
+    </marker>
+    <marker id="arrow-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1 L 10 5 L 0 9 z" fill="#f43f5e" />
+    </marker>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8" />
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b" />
+    </marker>
+    <style>
+        .title { font-size: 42px; font-weight: bold; fill: #38bdf8; }
+        .subtitle { font-size: 22px; fill: #94a3b8; }
+        .sec-head { font-size: 28px; font-weight: bold; fill: #f8fafc; }
+        .card-head { font-size: 20px; font-weight: bold; }
+        .code-txt { font-family: Consolas, monospace; font-size: 17px; }
+        .small-code { font-family: Consolas, monospace; font-size: 14px; fill: #94a3b8; }
+        .body-txt { font-size: 17px; fill: #cbd5e1; }
+        .badge { font-size: 14px; font-weight: bold; }
+    </style>
+</defs>
+<rect x="50" y="40" width="2100" height="120" rx="16" fill="#131b2e" stroke="#2563eb" stroke-width="2"/>
+<text x="80" y="90" class="title">TELNET APPLICATION PROTOCOL — COMPLETE FLOW DIAGRAM</text>
+<text x="80" y="130" class="subtitle">RFC 854 (NVT / IAC) · RFC 855 (Option Negotiation) · RFC 857 (ECHO) · RFC 858 (SGA) · RFC 1091 (TERMINAL-TYPE) · C++17</text>
+<rect x="50" y="180" width="2100" height="1550" rx="16" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+<text x="80" y="225" class="sec-head">1. End-to-End Client–Server Protocol Sequence Flow</text>
+<rect x="110" y="260" width="180" height="50" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+<text x="200" y="292" text-anchor="middle" class="card-head" fill="#38bdf8">User / Terminal</text>
+<line x1="200" y1="320" x2="200" y2="1500" stroke="#334155" stroke-width="2" stroke-dasharray="8 8"/>
+<rect x="560" y="260" width="180" height="50" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="2"/>
+<text x="650" y="292" text-anchor="middle" class="card-head" fill="#60a5fa">telnet_client</text>
+<line x1="650" y1="320" x2="650" y2="1500" stroke="#334155" stroke-width="2" stroke-dasharray="8 8"/>
+<rect x="1010" y="260" width="180" height="50" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="2"/>
+<text x="1100" y="292" text-anchor="middle" class="card-head" fill="#a855f7">TCP Stream / Socket</text>
+<line x1="1100" y1="320" x2="1100" y2="1500" stroke="#334155" stroke-width="2" stroke-dasharray="8 8"/>
+<rect x="1460" y="260" width="180" height="50" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+<text x="1550" y="292" text-anchor="middle" class="card-head" fill="#34d399">telnet_server</text>
+<line x1="1550" y1="320" x2="1550" y2="1500" stroke="#334155" stroke-width="2" stroke-dasharray="8 8"/>
+<rect x="1910" y="260" width="180" height="50" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+<text x="2000" y="292" text-anchor="middle" class="card-head" fill="#f59e0b">TerminalSession</text>
+<line x1="2000" y1="320" x2="2000" y2="1500" stroke="#334155" stroke-width="2" stroke-dasharray="8 8"/>
+<rect x="80" y="330" width="2040" height="34" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+<text x="100" y="353" class="badge" fill="#38bdf8">PHASE 1: TCP CONNECTION ESTABLISHMENT</text>
+<line x1="650" y1="380" x2="1100" y2="380" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<text x="875" y="372" text-anchor="middle" class="code-txt" fill="#60a5fa">1. connect(host, port) → SYN</text>
+<line x1="1100" y1="425" x2="1550" y2="425" stroke="#34d399" stroke-width="2" marker-end="url(#arrow-green)"/>
+<text x="1325" y="417" text-anchor="middle" class="code-txt" fill="#34d399">2. accept() returns client socket fd</text>
+<rect x="1450" y="458" width="200" height="36" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+<text x="1550" y="482" text-anchor="middle" class="small-code" fill="#a7f3d0">Spawn client thread</text>
+<rect x="80" y="525" width="2040" height="34" rx="6" fill="#1e293b" stroke="#a855f7" stroke-width="1"/>
+<text x="100" y="548" class="badge" fill="#a855f7">PHASE 2: TELNET OPTION NEGOTIATION &amp; SUBNEGOTIATION (RFC 854, 855, 1091)</text>
+<line x1="1550" y1="575" x2="650" y2="575" stroke="#34d399" stroke-width="2" marker-end="url(#arrow-green)"/>
+<text x="1100" y="567" text-anchor="middle" class="code-txt" fill="#34d399">IAC WILL ECHO [FF FB 01] + IAC WILL SGA [FF FB 03]</text>
+<text x="1100" y="593" text-anchor="middle" class="code-txt" fill="#34d399">+ IAC DO TERMINAL-TYPE [FF FD 18]</text>
+<line x1="650" y1="640" x2="1550" y2="640" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<text x="1100" y="632" text-anchor="middle" class="code-txt" fill="#60a5fa">IAC DO ECHO [FF FD 01] + IAC WILL SGA [FF FB 03]</text>
+<text x="1100" y="658" text-anchor="middle" class="code-txt" fill="#60a5fa">+ IAC WILL TERMINAL-TYPE [FF FB 18]</text>
+<line x1="1550" y1="705" x2="650" y2="705" stroke="#a855f7" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<text x="1100" y="697" text-anchor="middle" class="code-txt" fill="#a855f7">IAC SB TERMINAL-TYPE SEND IAC SE [FF FA 18 01 FF F0]</text>
+<line x1="650" y1="755" x2="1550" y2="755" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<text x="1100" y="747" text-anchor="middle" class="code-txt" fill="#60a5fa">IAC SB TERMINAL-TYPE IS 'xterm-256color' IAC SE [FF FA 18 00 ... FF F0]</text>
+<rect x="950" y="800" width="300" height="32" rx="6" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
+<text x="1100" y="821" text-anchor="middle" class="small-code" fill="#e9d5ff">Negotiation Complete · Full-Duplex NVT Active</text>
+<rect x="80" y="855" width="2040" height="34" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+<text x="100" y="878" class="badge" fill="#10b981">PHASE 3: BIDIRECTIONAL NVT TERMINAL SESSION &amp; COMMAND PROCESSING</text>
+<line x1="1550" y1="900" x2="650" y2="900" stroke="#34d399" stroke-width="2" marker-end="url(#arrow-green)"/>
+<text x="1100" y="892" text-anchor="middle" class="code-txt" fill="#34d399">NVT encoded prompt: 'telnet&gt; '</text>
+<line x1="650" y1="935" x2="200" y2="935" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<text x="425" y="927" text-anchor="middle" class="code-txt" fill="#60a5fa">stdout: 'telnet&gt; '</text>
+<line x1="200" y1="980" x2="650" y2="980" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow-cyan)"/>
+<text x="425" y="972" text-anchor="middle" class="code-txt" fill="#38bdf8">stdin: 'help' + Enter</text>
+<line x1="650" y1="1020" x2="1550" y2="1020" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<text x="1100" y="1012" text-anchor="middle" class="code-txt" fill="#60a5fa">NvtEncoder: 'help\r\n' [68 65 6C 70 0D 0A]</text>
+<line x1="1550" y1="1060" x2="2000" y2="1060" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+<text x="1775" y="1052" text-anchor="middle" class="code-txt" fill="#f59e0b">session.processCommand('help')</text>
+<line x1="2000" y1="1100" x2="1550" y2="1100" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+<text x="1775" y="1092" text-anchor="middle" class="code-txt" fill="#f59e0b">returns help menu text string</text>
+<line x1="1550" y1="1140" x2="650" y2="1140" stroke="#34d399" stroke-width="2" marker-end="url(#arrow-green)"/>
+<text x="1100" y="1132" text-anchor="middle" class="code-txt" fill="#34d399">NvtEncoder(help_text) + 'telnet&gt; '</text>
+<line x1="650" y1="1175" x2="200" y2="1175" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<text x="425" y="1167" text-anchor="middle" class="code-txt" fill="#60a5fa">NvtDecoder → terminal display</text>
+<rect x="300" y="1220" width="1600" height="48" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+<text x="330" y="1250" class="body-txt">Supported Interactive Commands:  date (current timestamp) · pwd (directory) · echo &lt;text&gt; · clear (\033[2J\033[H)</text>
+<rect x="80" y="1290" width="2040" height="34" rx="6" fill="#1e293b" stroke="#f43f5e" stroke-width="1"/>
+<text x="100" y="1313" class="badge" fill="#f43f5e">PHASE 4: GRACEFUL DISCONNECTION &amp; SESSION TEARDOWN</text>
+<line x1="200" y1="1335" x2="650" y2="1335" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow-cyan)"/>
+<text x="425" y="1327" text-anchor="middle" class="code-txt" fill="#38bdf8">stdin: 'exit' + Enter</text>
+<line x1="650" y1="1375" x2="1550" y2="1375" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<text x="1100" y="1367" text-anchor="middle" class="code-txt" fill="#60a5fa">NvtEncoder: 'exit\r\n'</text>
+<line x1="1550" y1="1415" x2="2000" y2="1415" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+<text x="1775" y="1407" text-anchor="middle" class="code-txt" fill="#f59e0b">processCommand('exit') → shouldExit = true</text>
+<line x1="1550" y1="1455" x2="650" y2="1455" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-rose)"/>
+<text x="1100" y="1447" text-anchor="middle" class="code-txt" fill="#f43f5e">'Goodbye!\r\n' then close(socket)</text>
+<line x1="650" y1="1490" x2="200" y2="1490" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-rose)"/>
+<text x="425" y="1482" text-anchor="middle" class="code-txt" fill="#f43f5e">stdout: '[Connection closed]'</text>
+<rect x="50" y="1760" width="1050" height="600" rx="16" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+<text x="80" y="1800" class="sec-head">2. IAC Parser 5-State Machine</text>
+<text x="80" y="1830" class="subtitle">Survives TCP fragmentation across recv() boundaries</text>
+<rect x="100" y="1870" width="160" height="60" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+<text x="180" y="1908" text-anchor="middle" class="card-head" fill="#38bdf8">DATA</text>
+<text x="100" y="1952" class="small-code">Normal text</text>
+<text x="100" y="1970" class="small-code">Accumulates chars</text>
+<rect x="400" y="1870" width="160" height="60" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+<text x="480" y="1908" text-anchor="middle" class="card-head" fill="#f59e0b">IAC_RECV</text>
+<text x="400" y="1952" class="small-code">Saw 0xFF (IAC)</text>
+<text x="400" y="1970" class="small-code">Branches on cmd</text>
+<rect x="700" y="1870" width="170" height="60" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+<text x="785" y="1908" text-anchor="middle" class="card-head" fill="#10b981">CMD_RECV</text>
+<text x="700" y="1952" class="small-code">WILL/WONT/DO/DONT</text>
+<text x="700" y="1970" class="small-code">Waits for option byte</text>
+<rect x="400" y="2060" width="160" height="60" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="2"/>
+<text x="480" y="2098" text-anchor="middle" class="card-head" fill="#a855f7">SB_RECV</text>
+<text x="400" y="2142" class="small-code">Subnegotiation</text>
+<text x="400" y="2160" class="small-code">Accumulates payload</text>
+<rect x="700" y="2060" width="170" height="60" rx="8" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+<text x="785" y="2098" text-anchor="middle" class="card-head" fill="#ec4899">SB_IAC</text>
+<text x="700" y="2142" class="small-code">Saw IAC in SB</text>
+<text x="700" y="2160" class="small-code">Checks SE or escape</text>
+<line x1="260" y1="1900" x2="400" y2="1900" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+<text x="330" y="1890" text-anchor="middle" class="small-code" fill="#f59e0b">b==FF</text>
+<line x1="560" y1="1900" x2="700" y2="1900" stroke="#10b981" stroke-width="2" marker-end="url(#arrow-green)"/>
+<text x="630" y="1890" text-anchor="middle" class="small-code" fill="#10b981">WILL/DO...</text>
+<line x1="480" y1="1930" x2="480" y2="2060" stroke="#a855f7" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<text x="500" y="2000" class="small-code" fill="#a855f7">b==SB(FA)</text>
+<line x1="560" y1="2090" x2="700" y2="2090" stroke="#ec4899" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<text x="630" y="2080" text-anchor="middle" class="small-code" fill="#ec4899">b==IAC(FF)</text>
+<text x="80" y="2270" class="body-txt">• Escaped IAC: IAC IAC (0xFF 0xFF) inside DATA or SB yields literal 0xFF byte.</text>
+<text x="80" y="2300" class="body-txt">• Loop prevention: RFC 1143 Q-method state tracking prevents infinite negotiation loops.</text>
+<rect x="1140" y="1760" width="1010" height="600" rx="16" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+<text x="1170" y="1800" class="sec-head">3. NVT Encoding / Decoding Architecture</text>
+<text x="1170" y="1830" class="subtitle">RFC 854 canonical Network Virtual Terminal conversions</text>
+<rect x="1170" y="1860" width="950" height="200" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+<text x="1190" y="1890" class="card-head" fill="#60a5fa">SEND PATH: NvtEncoder</text>
+<text x="1190" y="1930" class="body-txt">1. Plain text input from terminal/session</text>
+<text x="1190" y="1965" class="body-txt">2. Carriage Return mapping: CR (0x0D) → CR LF (0x0D 0x0A) on the wire</text>
+<text x="1190" y="2000" class="body-txt">3. IAC byte escaping: 0xFF in application data → 0xFF 0xFF (preserves control channel)</text>
+<text x="1190" y="2035" class="body-txt">4. encodeLine(): appends CR LF at line boundary</text>
+<rect x="1170" y="2090" width="950" height="220" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+<text x="1190" y="2120" class="card-head" fill="#34d399">RECEIVE PATH: NvtDecoder (Stateful across TCP boundaries)</text>
+<text x="1190" y="2160" class="body-txt">1. Takes raw data bytes after IAC command stripping</text>
+<text x="1190" y="2195" class="body-txt">2. pendingCR_ flag remembers lone CR arriving at the end of a recv() chunk</text>
+<text x="1190" y="2230" class="body-txt">3. CR LF (0x0D 0x0A) → newline ('\n') | CR NUL (0x0D 0x00) → standalone CR ('\r')</text>
+<text x="1190" y="2265" class="body-txt">4. Output text fed into inputBuffer until full command line is assembled</text>
+<rect x="50" y="2390" width="2100" height="550" rx="16" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+<text x="80" y="2430" class="sec-head">4. Concurrency Architecture: Thread-Per-Client Server &amp; Multiplexed Client</text>
+<rect x="80" y="2465" width="1000" height="425" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+<text x="110" y="2505" class="card-head" fill="#34d399">SERVER: Multi-Threaded Accept Loop</text>
+<text x="110" y="2550" class="body-txt">1. Listen Socket: port 5000, SO_REUSEADDR set, select() periodic check</text>
+<text x="110" y="2598" class="body-txt">2. Client Acceptance: accept() establishes client socket, spawns std::thread</text>
+<text x="110" y="2646" class="body-txt">3. Independent ClientState per client thread (Socket, TelnetProtocol, NvtDecoder,</text>
+<text x="110" y="2694" class="body-txt">   NvtEncoder, TerminalSession, inputBuffer) — zero shared mutable state</text>
+<text x="110" y="2742" class="body-txt">4. Command execution: help, echo, date, pwd, clear, exit — NO arbitrary shell exec</text>
+<text x="110" y="2790" class="body-txt">5. Clean Teardown: socket closed and thread joined on exit/client disconnection</text>
+<rect x="1120" y="2465" width="1000" height="425" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+<text x="1150" y="2505" class="card-head" fill="#60a5fa">CLIENT: Bidirectional select() Multiplexing</text>
+<text x="1150" y="2550" class="body-txt">1. Connection: connect(host, port) and sends initial negotiation requests</text>
+<text x="1150" y="2598" class="body-txt">2. Main Thread (sendLoop): select() on STDIN_FILENO (1s timeout), reads input,</text>
+<text x="1150" y="2646" class="body-txt">   encodes through NvtEncoder, sends via reliable sendAll()</text>
+<text x="1150" y="2694" class="body-txt">3. Background Thread (recvLoop): select() on socket fd (1s timeout), reads bytes,</text>
+<text x="1150" y="2742" class="body-txt">   feeds TelnetProtocol, decodes NVT text, displays on stdout</text>
+<text x="1150" y="2790" class="body-txt">4. Subnegotiation Reply: on TERMINAL-TYPE SEND, responds IS 'xterm-256color'</text>
+<text x="1150" y="2838" class="body-txt">5. Concurrency: user types commands simultaneously while receiving server stream</text>
+<text x="80" y="3050" class="subtitle">Computer Networks Laboratory Project · Complete C++17 Telnet Protocol Implementation</text>
+</svg>
